@@ -8,6 +8,9 @@ const NavbarContainer = styled.div`
   align-items: center;
   padding: 0px 36px 0px 36px;
   gap: 357.5px;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
 `;
 
 const NavBox = styled.div`
@@ -17,6 +20,9 @@ const NavBox = styled.div`
   justify-content: center;
   align-items: center;
   gap: 160px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 const NavItem = styled.p`
