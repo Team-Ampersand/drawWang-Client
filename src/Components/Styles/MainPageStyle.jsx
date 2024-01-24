@@ -7,17 +7,22 @@ export const MainContainer = styled.div`
   justify-content: center;
 `;
 
+
 export const ThreadNotFoundBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;
   width: 700px;
   height: 700px;
   border: 0;
   outline: none;
   margin-top: 66px;
+  margin-bottom: 230px;
   flex-direction: column;
 `;
+
+
 
 export const ThreadNotFoundImg = styled.div`
   width: 640px;
