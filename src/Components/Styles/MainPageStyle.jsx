@@ -5,7 +5,6 @@ export const MainContainer = styled.div`
   height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 
 export const ThreadNotFoundBox = styled.div`
@@ -16,15 +15,59 @@ export const ThreadNotFoundBox = styled.div`
   height: 700px;
   border: 0;
   outline: none;
+  margin-top: 66px;
+  flex-direction: column;
 `;
 
-export const ThreadNotFoundImg = styled.img`
+export const ThreadNotFoundImg = styled.div`
   width: 640px;
   height: 640px;
   background-image: url(${SketchPng});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: none; // border 초기화
-  outline: none; // outline 초기화
+  border: none;
+  outline: none;
+`;
+
+export const ThreadNotFoundTextBox = styled.div`
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 520px;
+  position: absolute;
+`;
+
+export const ThreadNotFoundTitle = styled.div`
+  font-size: 48px;
+  font-weight: 600;
+`;
+
+export const ThreadNotFoundDesc = styled.div`
+  font-size: 18px;
+  font-weight: 400;
+  color: #8c8c8c;
+`;
+
+export const CreateThreadText = styled.footer`
+  font-size: 18px;
+  font-weight: 400;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 56px;
+  letter-spacing: -0.22px;
+`;
+
+export const CreateThreadButtonText = styled.span`
+  font-size: 18px;
+  color: #5d9bff;
+  letter-spacing: -0.22px;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
