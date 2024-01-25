@@ -7,7 +7,6 @@ export const MainContainer = styled.div`
   justify-content: center;
 `;
 
-
 export const ThreadNotFoundBox = styled.div`
   display: flex;
   justify-content: center;
@@ -21,8 +20,6 @@ export const ThreadNotFoundBox = styled.div`
   margin-bottom: 230px;
   flex-direction: column;
 `;
-
-
 
 export const ThreadNotFoundImg = styled.div`
   width: 640px;

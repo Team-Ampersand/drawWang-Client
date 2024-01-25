@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "../Styles/App.css";
 
 const NavbarContainer = styled.div`
   height: 80px;
