@@ -1,5 +1,6 @@
 import Navbar from "../Components/Navbar";
 import * as s from "../Styles/MainPageStyle";
+import "../Styles/App.css";
 
 function MainPage() {
   return (
