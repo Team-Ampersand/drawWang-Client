@@ -59,7 +59,7 @@ export const CreateThreadText = styled.footer`
   font-weight: 400;
   position: absolute;
   bottom: 0;
-  margin-bottom: 56px;
+  margin-bottom: 3.5vh;
   letter-spacing: -0.22px;
 `;
 
