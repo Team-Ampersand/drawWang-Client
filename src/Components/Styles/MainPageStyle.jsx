@@ -49,9 +49,12 @@ export const ThreadNotFoundTitle = styled.div`
 `;
 
 export const ThreadNotFoundDesc = styled.div`
-  font-size: 18px;
+  font-size: 26px;
+  font-style: normal;
   font-weight: 400;
-  color: #8c8c8c;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  color: #737373;
 `;
 
 export const CreateThreadText = styled.footer`

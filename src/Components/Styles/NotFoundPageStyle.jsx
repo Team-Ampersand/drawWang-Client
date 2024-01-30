@@ -49,7 +49,10 @@ export const PageNotFoundTitle = styled.div`
 `;
 
 export const PageNotFoundDesc = styled.div`
-  font-size: 18px;
+  font-size: 26px;
+  font-style: normal;
   font-weight: 400;
-  color: #8c8c8c;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  color: #737373;
 `;
