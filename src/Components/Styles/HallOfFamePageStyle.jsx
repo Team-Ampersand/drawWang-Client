@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SketchPng from "../Images/Sketch.png";
+import MedalPng from "../Images/Medal.png";
 
 export const MainContainer = styled.div`
   height: calc(100vh - 80px);
@@ -7,7 +7,7 @@ export const MainContainer = styled.div`
   justify-content: center;
 `;
 
-export const ThreadNotFoundBox = styled.div`
+export const HallOfFameBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,10 +21,10 @@ export const ThreadNotFoundBox = styled.div`
   flex-direction: column;
 `;
 
-export const ThreadNotFoundImg = styled.div`
+export const HallOfFameImg = styled.div`
   width: 640px;
   height: 640px;
-  background-image: url(${SketchPng});
+  background-image: url(${MedalPng});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -32,7 +32,7 @@ export const ThreadNotFoundImg = styled.div`
   outline: none;
 `;
 
-export const ThreadNotFoundTextBox = styled.div`
+export const HallOfFameTextBox = styled.div`
   border: none;
   outline: none;
   display: flex;
@@ -43,12 +43,12 @@ export const ThreadNotFoundTextBox = styled.div`
   position: absolute;
 `;
 
-export const ThreadNotFoundTitle = styled.div`
+export const HallOfFameTitle = styled.div`
   font-size: 48px;
   font-weight: 600;
 `;
 
-export const ThreadNotFoundDesc = styled.div`
+export const HallOfFameDesc = styled.div`
   font-size: 26px;
   font-style: normal;
   font-weight: 400;
