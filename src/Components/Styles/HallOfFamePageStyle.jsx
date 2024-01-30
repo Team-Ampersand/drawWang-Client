@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import MedalPng from "../Images/Medal.png";
+import BlueCircleSVG from "../Images/BlueCircle.svg";
+import GrayCircleSVG from "../Images/GrayCircle.svg";
 
 export const MainContainer = styled.div`
   height: calc(100vh - 80px);
@@ -57,22 +59,41 @@ export const HallOfFameDesc = styled.div`
   color: #737373;
 `;
 
-export const CreateThreadText = styled.footer`
-  font-size: 18px;
-  font-weight: 400;
+export const SelectDateBox = styled.div`
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   position: absolute;
-  bottom: 0;
-  margin-bottom: 3.5vh;
-  letter-spacing: -0.22px;
+  top: 90%;
+  gap: 30px;
 `;
 
-export const CreateThreadButtonText = styled.span`
+export const SelectDateText = styled.div`
   font-size: 18px;
-  color: #5d9bff;
-  letter-spacing: -0.22px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 
-  &:hover {
-    text-decoration: underline;
+  &:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: -18px;
+    background-image: url(${GrayCircleSVG});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &.active:before {
+    background-image: url(${BlueCircleSVG});
   }
 `;
