@@ -1,6 +1,6 @@
 import React from "react";
 import * as S from "./style";
-import SearchSVG from "../../Images/svgs/Search.jsx";
+import { SearchSVG } from "../../Assets/svgs";
 
 function Navbar() {
   return (
@@ -11,7 +11,7 @@ function Navbar() {
       </S.NavBox>
       <S.SearchBox>
         <SearchSVG />
-        <S.SearchInput placeholder="찾으시는 스레드가 있으신가요?"></S.SearchInput>
+        <S.SearchInput placeholder="찾으시는 스레드가 있으신가요?" />
       </S.SearchBox>
     </S.NavbarContainer>
   );

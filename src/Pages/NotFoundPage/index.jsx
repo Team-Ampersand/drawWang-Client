@@ -4,7 +4,7 @@ import * as s from "./style";
 function NotFoundPage() {
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <s.MainContainer>
         <s.PageNotFoundBox>
           <s.PageNotFoundImg />

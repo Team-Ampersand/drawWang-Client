@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import MedalPng from "../../Images/imgs/Medal.png";
+import MedalPng from "../../Assets/pngs/Medal.png";
 
 export const MainContainer = styled.div`
   height: calc(100vh - 80px);

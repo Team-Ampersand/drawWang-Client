@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../../Components/Navbar";
 import * as s from "./style";
-import BlueCircleSVG from "../../Images/svgs/BlueCircle.jsx";
-import GrayCircleSVG from "../../Images/svgs/GrayCircle.jsx";
+import { BlueCircleSVG, GrayCircleSVG } from "../../Assets/svgs";
 
 function HallOfFamePage() {
   const [selected, setSelected] = useState("today"); 

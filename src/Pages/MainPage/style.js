@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SketchPng from "../../Images/imgs/Sketch.png";
+import SketchPng from "../../Assets/pngs/Sketch.png";
 
 
 export const MainContainer = styled.div`

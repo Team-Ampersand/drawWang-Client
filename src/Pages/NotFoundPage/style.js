@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PageNotFoundPng from "../../Images/imgs/PageNotFound.png";
+import PageNotFoundPng from "../../Assets/pngs/PageNotFound.png";
 
 export const MainContainer = styled.div`
   height: calc(100vh - 80px);

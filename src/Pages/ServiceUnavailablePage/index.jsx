@@ -3,7 +3,7 @@ import * as s from "./style";
 function ServiceUnavailablePage() {
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <s.MainContainer>
         <s.ServiceUnavailableBox>
           <s.ServiceUnavailableImg />

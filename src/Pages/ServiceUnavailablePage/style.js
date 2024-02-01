@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ServiceUnavailablePng from "../../Images/imgs/ServiceUnavailable.png";
+import ServiceUnavailablePng from "../../Assets/pngs/ServiceUnavailable.png";
 
 export const MainContainer = styled.div`
   height: calc(100vh - 80px);
