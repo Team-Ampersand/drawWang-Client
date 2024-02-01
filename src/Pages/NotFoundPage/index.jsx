@@ -1,6 +1,5 @@
-import Navbar from "../Components/Navbar";
-import * as s from "../Styles/NotFoundPageStyle";
-import "../Styles/App.css";
+import Navbar from "../../Components/Navbar";
+import * as s from "./style";
 
 function NotFoundPage() {
   return (

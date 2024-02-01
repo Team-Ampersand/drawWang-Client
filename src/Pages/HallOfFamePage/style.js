@@ -1,7 +1,5 @@
 import styled from "styled-components";
-import MedalPng from "../Images/Medal.png";
-import BlueCircleSVG from "../Images/BlueCircle.svg";
-import GrayCircleSVG from "../Images/GrayCircle.svg";
+import MedalPng from "../../Images/imgs/Medal.png";
 
 export const MainContainer = styled.div`
   height: calc(100vh - 80px);
@@ -68,7 +66,7 @@ export const SelectDateBox = styled.div`
   flex-direction: row;
   position: absolute;
   top: 90%;
-  gap: 30px;
+  gap: 8px;
 `;
 
 export const SelectDateText = styled.div`
@@ -81,19 +79,14 @@ export const SelectDateText = styled.div`
   align-items: center;
   cursor: pointer;
 
-  &:before {
-    content: "";
+margin-right:20px;
+`; 
+
+export const SelectCircle =styled.div`
+
+  margin-bottom: 10px;
+  display: flex;
+content: "";
     width: 8px;
     height: 8px;
-    position: absolute;
-    left: -18px;
-    background-image: url(${GrayCircleSVG});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-
-  &.active:before {
-    background-image: url(${BlueCircleSVG});
-  }
-`;
+    `;

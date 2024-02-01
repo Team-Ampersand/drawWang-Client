@@ -1,7 +1,5 @@
-import Navbar from "../Components/Navbar";
-import * as s from "../Styles/ServiceUnavailablePageStyle";
-import "../Styles/App.css";
-
+import Navbar from "../../Components/Navbar";
+import * as s from "./style";
 function ServiceUnavailablePage() {
   return (
     <>
