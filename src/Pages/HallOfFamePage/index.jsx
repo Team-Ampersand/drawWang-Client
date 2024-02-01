@@ -5,7 +5,7 @@ import BlueCircleSVG from "../../Images/svgs/BlueCircle.jsx";
 import GrayCircleSVG from "../../Images/svgs/GrayCircle.jsx";
 
 function HallOfFamePage() {
-  const [selected, setSelected] = useState("today"); // 초기값을 "today"로 설정
+  const [selected, setSelected] = useState("today"); 
 
   return (
     <>
@@ -19,18 +19,18 @@ function HallOfFamePage() {
           </s.HallOfFameTextBox>
         </s.HallOfFameBox>
         <s.SelectDateBox>
-          {/* 선택 항목의 클래스를 selected 값과 비교하여 설정 */}
-          <s.SelectCircle>{selected === "today" ? <BlueCircleSVG /> : <GrayCircleSVG />}</s.SelectCircle>
-
-          <s.SelectDateText className={selected === "today" ? "active" : ""} onClick={() => setSelected("today")}>
-            오늘
-          </s.SelectDateText>
-
-          <s.SelectCircle>{selected === "all" ? <BlueCircleSVG /> : <GrayCircleSVG />}</s.SelectCircle>
-
-          <s.SelectDateText className={selected === "all" ? "active" : ""} onClick={() => setSelected("all")}>
-            전체
-          </s.SelectDateText>
+          <s.SelectWrapper>
+            <s.SelectCircle>{selected === "today" ? <BlueCircleSVG /> : <GrayCircleSVG />}</s.SelectCircle>
+            <s.SelectDateText className={selected === "today" ? "active" : ""} onClick={() => setSelected("today")}>
+              오늘
+            </s.SelectDateText>
+          </s.SelectWrapper>
+          <s.SelectWrapper>
+            <s.SelectCircle>{selected === "all" ? <BlueCircleSVG /> : <GrayCircleSVG />}</s.SelectCircle>
+            <s.SelectDateText className={selected === "all" ? "active" : ""} onClick={() => setSelected("all")}>
+              전체
+            </s.SelectDateText>
+          </s.SelectWrapper>
         </s.SelectDateBox>
       </s.MainContainer>
     </>

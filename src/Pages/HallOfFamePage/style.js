@@ -66,7 +66,14 @@ export const SelectDateBox = styled.div`
   flex-direction: row;
   position: absolute;
   top: 90%;
-  gap: 8px;
+  gap: 20px;
+`;
+
+export const SelectWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 `;
 
 export const SelectDateText = styled.div`
@@ -78,15 +85,13 @@ export const SelectDateText = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-margin-right:20px;
 `; 
 
-export const SelectCircle =styled.div`
-
+export const SelectCircle = styled.div`
   margin-bottom: 10px;
   display: flex;
-content: "";
-    width: 8px;
-    height: 8px;
-    `;
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+`;
