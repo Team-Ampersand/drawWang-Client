@@ -14,8 +14,6 @@ export const HallOfFameBox = styled.div`
   align-self: center;
   width: 700px;
   height: 700px;
-  border: 0;
-  outline: none;
   margin-top: 66px;
   margin-bottom: 230px;
   flex-direction: column;
@@ -28,13 +26,9 @@ export const HallOfFameImg = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: none;
-  outline: none;
 `;
 
 export const HallOfFameTextBox = styled.div`
-  border: none;
-  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,8 +52,6 @@ export const HallOfFameDesc = styled.div`
 `;
 
 export const SelectDateBox = styled.div`
-  border: none;
-  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;

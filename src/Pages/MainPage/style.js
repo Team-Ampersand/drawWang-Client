@@ -15,7 +15,6 @@ export const ThreadNotFoundBox = styled.div`
   align-self: center;
   width: 700px;
   height: 700px;
-  border: 0;
   margin-top: 66px;
   margin-bottom: 230px;
   flex-direction: column;

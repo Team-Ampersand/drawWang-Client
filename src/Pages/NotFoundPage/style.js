@@ -14,8 +14,6 @@ export const PageNotFoundBox = styled.div`
   align-self: center;
   width: 700px;
   height: 700px;
-  border: 0;
-  outline: none;
   margin-top: 66px;
   margin-bottom: 230px;
   flex-direction: column;
@@ -28,13 +26,9 @@ export const PageNotFoundImg = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: none;
-  outline: none;
 `;
 
 export const PageNotFoundTextBox = styled.div`
-  border: none;
-  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
