@@ -63,7 +63,6 @@ export const SelectDateBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
   position: absolute;
   top: 90%;
   gap: 20px;
@@ -73,25 +72,14 @@ export const SelectWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  cursor: pointer;
+  gap: 8px;
 `;
 
 export const SelectDateText = styled.div`
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 10px;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 `; 
-
-export const SelectCircle = styled.div`
-  margin-bottom: 10px;
-  display: flex;
-  content: "";
-  width: 8px;
-  height: 8px;
-  margin-right: 8px;
-`;

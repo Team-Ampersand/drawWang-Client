@@ -19,13 +19,13 @@ function HallOfFamePage() {
         </s.HallOfFameBox>
         <s.SelectDateBox>
           <s.SelectWrapper>
-            <s.SelectCircle>{selected === "today" ? <BlueCircleSVG /> : <GrayCircleSVG />}</s.SelectCircle>
+            {selected === "today" ? <BlueCircleSVG /> : <GrayCircleSVG />}
             <s.SelectDateText className={selected === "today" ? "active" : ""} onClick={() => setSelected("today")}>
               오늘
             </s.SelectDateText>
           </s.SelectWrapper>
           <s.SelectWrapper>
-            <s.SelectCircle>{selected === "all" ? <BlueCircleSVG /> : <GrayCircleSVG />}</s.SelectCircle>
+            {selected === "all" ? <BlueCircleSVG /> : <GrayCircleSVG />}
             <s.SelectDateText className={selected === "all" ? "active" : ""} onClick={() => setSelected("all")}>
               전체
             </s.SelectDateText>
