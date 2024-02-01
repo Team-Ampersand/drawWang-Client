@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../../Components/Navbar/index";
+import Navbar from "../../Components/Navbar";
 import * as s from "./style";
 import BlueCircleSVG from "../../Images/svgs/BlueCircle.jsx";
 import GrayCircleSVG from "../../Images/svgs/GrayCircle.jsx";
