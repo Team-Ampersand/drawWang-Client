@@ -1,11 +1,10 @@
-import Navbar from "../Components/Navbar";
-import * as s from "../Styles/NotFoundPageStyle";
-import "../Styles/App.css";
+import Navbar from "../../Components/Navbar";
+import * as s from "./style";
 
 function NotFoundPage() {
   return (
     <>
-      <Navbar></Navbar>
+      <Navbar />
       <s.MainContainer>
         <s.PageNotFoundBox>
           <s.PageNotFoundImg />

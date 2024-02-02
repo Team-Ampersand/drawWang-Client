@@ -1,6 +1,5 @@
-import Navbar from "../Components/Navbar";
-import * as s from "../Styles/MainPageStyle";
-import "../Styles/App.css";
+import Navbar from "../../Components/Navbar";
+import * as s from "./style";
 
 function MainPage() {
   return (
