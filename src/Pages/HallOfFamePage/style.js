@@ -71,7 +71,4 @@ export const SelectWrapper = styled.div`
 export const SelectDateText = styled.div`
   font-size: 18px;
   font-weight: 400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `; 
