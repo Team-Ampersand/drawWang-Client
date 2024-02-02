@@ -1,11 +1,26 @@
 import styled from "styled-components";
-import SketchPng from "../../Assets/pngs/Sketch.png";
-
+import { SwipeRightArrowSVG } from "../../Assets/svgs";
 
 export const MainContainer = styled.div`
   height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
+`;
+
+export const TopicsMainContainer = styled.div`
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const TopicsContainer = styled.div`
+  display: flex;
+  gap: 100px;
+  padding: 0 80px;
+  margin-left: 80px;
+  width: 100%;
+  position: fixed;
 `;
 
 export const ThreadNotFoundBox = styled.div`
@@ -18,15 +33,6 @@ export const ThreadNotFoundBox = styled.div`
   margin-top: 66px;
   margin-bottom: 230px;
   flex-direction: column;
-`;
-
-export const ThreadNotFoundImg = styled.div`
-  width: 640px;
-  height: 640px;
-  background-image: url(${SketchPng});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 `;
 
 export const ThreadNotFoundTextBox = styled.div`
@@ -70,4 +76,34 @@ export const CreateThreadButtonText = styled.span`
   &:hover {
     text-decoration: underline;
   }
+`;
+
+export const SwipeRightArrowButton = styled.div`
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 1%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+`;
+
+export const SwipeLeftArrowButton = styled.div`
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 1%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
 `;
