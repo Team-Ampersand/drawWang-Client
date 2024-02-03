@@ -40,7 +40,7 @@ export const ThreadBoxTitle = styled.div`
   letter-spacing: -0.32px;
 `;
 
-export const ThreadBoxCreatedTimeText = styled.div`
+export const ThreadBoxCreatedTimeLeftText = styled.div`
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
@@ -52,4 +52,30 @@ export const ThreadBoxArrowIcon = styled.div`
   width: 36px;
   height: 36px;
   cursor: pointer;
+`;
+
+export const NumberOfHeartText = styled.div`
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+`;
+
+export const CreateNewThreadButton = styled.div`
+  width: 120px;
+  height: 460px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 30px;
+
+  &:hover {
+    transform: translateY(-20px);
+    transition: all 0.3s ease-in-out;
+  }
 `;

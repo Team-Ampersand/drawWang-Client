@@ -33,6 +33,46 @@ export const PopUpBackground = styled.div`
   z-index: 1;
 `;
 
+export const SelectedTopicContainer = styled.div`
+  height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  z-index: 2;
+  align-items: center;
+`;
+
+export const SelectedTopicTitleBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 66px;
+  position: absolute;
+  z-index: 2;
+  top: 5%;
+`;
+
+export const SelectedTopicName = styled.div`
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: -0.48px;
+  z-index: 2;
+`;
+
+export const SelectedTopicTimeLeftText = styled.div`
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+  color: #8c8c8c;
+  z-index: 2;
+`;
+
 export const ThreadNotFoundBox = styled.div`
   display: flex;
   justify-content: center;
@@ -192,4 +232,26 @@ export const TypeTopicPopUpButton = styled.div`
   &.active {
     background-color: #5d9bff;
   }
+`;
+
+export const SelectFilterBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 90%;
+  gap: 20px;
+`;
+
+export const SelectFilterWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+`;
+
+export const SelectFilterText = styled.div`
+  font-size: 18px;
+  font-weight: 400;
 `;
