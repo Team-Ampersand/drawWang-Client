@@ -23,6 +23,16 @@ export const TopicsContainer = styled.div`
   position: fixed;
 `;
 
+export const SelectedPictureContainer = styled.div`
+  height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  z-index: 2;
+  align-items: center;
+`;
+
 export const PopUpBackground = styled.div`
   width: 100%;
   height: 100%;
@@ -254,4 +264,130 @@ export const SelectFilterWrapper = styled.div`
 export const SelectFilterText = styled.div`
   font-size: 18px;
   font-weight: 400;
+`;
+
+export const SlectedPictureNav = styled.div`
+  display: flex;
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: absolute;
+  top: 0%;
+`;
+
+export const SelectedPictureItem = styled.div`
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+  letter-spacing: -0.32px;
+  padding: 0 36px;
+`;
+
+export const ReportPicturePopUpBackground = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(64, 64, 64, 0.5);
+  z-index: 2;
+`;
+
+export const ReportPicturePopUp = styled.div`
+  width: 520px;
+  height: 430px;
+  border-radius: 20px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 28px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+`;
+
+export const ReportPicturePopUpReportTypeButtonWrapper = styled.div`
+  display: flex;
+  width: 240px;
+  height: 48px;
+  background-color: #d9d9d9;
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ReportPicturePopUpReportTypeButton = styled.div`
+  width: 118px;
+  height: 44px;
+  border-radius: 14px;
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.18px;
+  color: #8c8c8c;
+
+  &.active {
+    background-color: #fff;
+    color: #000;
+  }
+`;
+
+export const ReportPicturePopUpReportInputBox = styled.input`
+  display: flex;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: -0.22px;
+  padding: 16px 20px;
+  gap: 10px;
+  color: #000;
+  width: 420px;
+  height: 200px;
+  border: 2px solid #d9d9d9;
+  border-radius: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: "AppleSDGothicNeoM00", sans-serif;
+
+  &::placeholder {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.22px;
+    color: #8c8c8c;
+  }
+`;
+
+export const ReportPicturePopUpSubmitButton = styled.div`
+  width: 120px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #5d9bff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.18px;
 `;

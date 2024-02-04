@@ -10,7 +10,9 @@ import {
   SwipeLeftArrowSVG,
   BlueCircleSVG,
   GrayCircleSVG,
+  ReportSVG,
 } from "../../Assets/svgs";
+import { useEffect } from "react";
 
 function MainPage() {
   const [inputValue, setInputValue] = useState("");
@@ -20,6 +22,9 @@ function MainPage() {
   const [sameTopicAlreadyExist, setSameTopicAlreadyExist] = useState(false); // 추후 서버에서 받아온 데이터로 변경
   const [topics, setTopics] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("like");
+  const [selectedPicture, setSelectedPicture] = useState(null);
+  const [reportPopUpEnabled, setReportPopUpEnabled] = useState(false);
+  const [reportType, setReportType] = useState("topic");
 
   const handleSwipeRight = () => {
     const newSlidePx = slidePx - 1200;
@@ -43,9 +48,66 @@ function MainPage() {
     setSameTopicAlreadyExist(!sameTopicAlreadyExist);
   };
 
-  const handleArrowClick = () => {
+  const handleTopicArrowClick = () => {
     setTopics("학교");
   };
+
+  const handlePictureArrowClick = () => {
+    setSelectedPicture(1);
+  };
+
+  const handleClosePicture = () => {
+    setSelectedPicture(null);
+  };
+
+  const handleReportPopUp = () => {
+    setReportPopUpEnabled(!reportPopUpEnabled);
+  };
+
+  const handleReportTypeTopicButtonClick = () => {
+    setReportType("topic");
+  };
+
+  const handleReportTypePictureButtonClick = () => {
+    setReportType("picture");
+  };
+
+  // state의 어떤 값이던 변경되면 콘솔에 출력
+  useEffect(() => {
+    console.log("topicsExist:", topicsExist);
+  }, [topicsExist]);
+
+  useEffect(() => {
+    console.log("slidePx:", slidePx);
+  }, [slidePx]);
+
+  useEffect(() => {
+    console.log("typeTopicPopUpEnabled:", typeTopicPopUpEnabled);
+  }, [typeTopicPopUpEnabled]);
+
+  useEffect(() => {
+    console.log("sameTopicAlreadyExist:", sameTopicAlreadyExist);
+  }, [sameTopicAlreadyExist]);
+
+  useEffect(() => {
+    console.log("topics:", topics);
+  }, [topics]);
+
+  useEffect(() => {
+    console.log("selectedFilter:", selectedFilter);
+  }, [selectedFilter]);
+
+  useEffect(() => {
+    console.log("selectedPicture:", selectedPicture);
+  }, [selectedPicture]);
+
+  useEffect(() => {
+    console.log("reportPopUpEnabled:", reportPopUpEnabled);
+  }, [reportPopUpEnabled]);
+
+  useEffect(() => {
+    console.log("reportType:", reportType);
+  }, [reportType]);
 
   return (
     <>
@@ -59,7 +121,7 @@ function MainPage() {
                 transition: "transform 0.3s ease-in-out",
               }}
             >
-              <TopicBox onArrowClick={handleArrowClick} />
+              <TopicBox onTopicArrowClick={handleTopicArrowClick} />
               <TopicBox />
               <TopicBox />
               <TopicBox />
@@ -81,12 +143,68 @@ function MainPage() {
                   }}
                 >
                   <CreateNewBox />
-                  <PictureBox />
+                  <PictureBox onPictureArrowClick={handlePictureArrowClick} />
                   <PictureBox />
                   <PictureBox />
                   <PictureBox />
                   <PictureBox />
                 </s.TopicsContainer>
+                {/* 1번 사진이 선택되면 렌더링할 페이지 */}
+                {selectedPicture === 1 && (
+                  <>
+                    <s.SelectedPictureContainer>
+                      <s.SlectedPictureNav>
+                        <s.SelectedPictureItem
+                          style={{ cursor: "pointer" }}
+                          onClick={handleClosePicture}
+                        >
+                          <SwipeLeftArrowSVG />
+                        </s.SelectedPictureItem>
+                        <s.SelectedPictureItem>학교</s.SelectedPictureItem>
+                        <s.SelectedPictureItem
+                          style={{ cursor: "pointer" }}
+                          onClick={handleReportPopUp}
+                        >
+                          <ReportSVG />
+                        </s.SelectedPictureItem>
+                      </s.SlectedPictureNav>
+                    </s.SelectedPictureContainer>
+                    {reportPopUpEnabled && (
+                      <>
+                        <s.ReportPicturePopUpBackground
+                          onClick={handleReportPopUp}
+                        ></s.ReportPicturePopUpBackground>
+                        <s.ReportPicturePopUp>
+                          <s.ReportPicturePopUpReportTypeButtonWrapper>
+                            <s.ReportPicturePopUpReportTypeButton
+                              className={reportType === "topic" ? "active" : ""}
+                              onClick={handleReportTypeTopicButtonClick}
+                            >
+                              주제
+                            </s.ReportPicturePopUpReportTypeButton>
+                            <s.ReportPicturePopUpReportTypeButton
+                              className={
+                                reportType === "picture" ? "active" : ""
+                              }
+                              onClick={handleReportTypePictureButtonClick}
+                            >
+                              그림
+                            </s.ReportPicturePopUpReportTypeButton>
+                          </s.ReportPicturePopUpReportTypeButtonWrapper>
+                          {/* PlaceHolder 추가 */}
+                          <s.ReportPicturePopUpReportInputBox
+                            as="textarea"
+                            placeholder={"내용을 입력해주세요."}
+                            rows={10} // 원하는 줄 수로 설정
+                          />
+                          <s.ReportPicturePopUpSubmitButton>
+                            확인
+                          </s.ReportPicturePopUpSubmitButton>
+                        </s.ReportPicturePopUp>
+                      </>
+                    )}
+                  </>
+                )}
                 <s.SwipeRightArrowButton
                   onClick={handleSwipeRight}
                   style={{ display: slidePx <= -1500 ? "none" : "flex" }} // 추후 서버에서 받아온 데이터로 변경

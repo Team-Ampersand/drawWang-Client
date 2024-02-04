@@ -6,3 +6,4 @@ export { default as SwipeRightArrowSVG } from "./SwipeRightArrow.jsx";
 export { default as SwipeLeftArrowSVG } from "./SwipeLeftArrow.jsx";
 export { default as HeartSVG } from "./Heart.jsx";
 export { default as PlusSVG } from "./Plus.jsx";
+export { default as ReportSVG } from "./Report.jsx";

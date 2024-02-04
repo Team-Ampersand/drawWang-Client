@@ -2,7 +2,11 @@ import React from "react";
 import * as s from "./style";
 import { ThreadBoxArrowSVG, HeartSVG } from "../../Assets/svgs";
 
-function PictureBox() {
+function PictureBox({ onPictureArrowClick }) {
+  const handlePictureArrowClick = () => {
+    onPictureArrowClick();
+  };
+
   return (
     <>
       <s.ThreadBoxContainer>
@@ -11,7 +15,7 @@ function PictureBox() {
             <HeartSVG />
             <s.NumberOfHeartText>9,999</s.NumberOfHeartText>
           </s.ThreadBoxTextBox>
-          <s.ThreadBoxArrowIcon>
+          <s.ThreadBoxArrowIcon onClick={handlePictureArrowClick}>
             <ThreadBoxArrowSVG />
           </s.ThreadBoxArrowIcon>
         </s.ThreadBoxBottomContainer>
