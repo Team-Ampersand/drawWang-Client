@@ -7,7 +7,7 @@ import {
   SwipeRightArrowSVG,
   SwipeLeftArrowSVG,
 } from "../../Assets/svgs";
-import ThreadBox from "../../Components/ThreadBox/HallOfFame";
+import ThreadBox from "../../Components/ThreadBox/halloffame";
 
 function HallOfFamePage() {
   const [selected, setSelected] = useState("today");
