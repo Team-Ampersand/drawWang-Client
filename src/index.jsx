@@ -1,15 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import MainPage from "./Pages/MainPage/index";
 import NotFoundPage from "./Pages/NotFoundPage/index";
 import ServiceUnavailablePage from "./Pages/ServiceUnavailablePage/index";
 import HallOfFamePage from "./Pages/HallOfFamePage/index";
 import GlobalStyle from "./Styles/GlobalStyle";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
+ReactDOM.render(
+  <Router>
     <GlobalStyle />
-    <MainPage />
-  </React.StrictMode>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/halloffame" element={<HallOfFamePage />} />
+      <Route path="/504" element={<ServiceUnavailablePage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
+  </Router>,
+  document.getElementById("root")
 );
