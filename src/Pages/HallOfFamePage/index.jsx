@@ -11,7 +11,7 @@ import ThreadBox from "../../Components/ThreadBox/halloffame";
 
 function HallOfFamePage() {
   const [selected, setSelected] = useState("today");
-  const [hallOfFameExist, setHallOfFameExist] = useState(false);
+  const [hallOfFameExist, setHallOfFameExist] = useState(true);
   const [slidePx, setSlidePx] = useState(0);
 
   const handleSwipeRight = () => {
