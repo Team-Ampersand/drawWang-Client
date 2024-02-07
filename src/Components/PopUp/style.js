@@ -163,6 +163,7 @@ export const ReportPicturePopUpReportInputBox = styled.input`
   align-items: flex-start;
   justify-content: flex-start;
   font-family: "AppleSDGothicNeoM00", sans-serif;
+  resize: none;
 
   &::placeholder {
     font-size: 22px;
