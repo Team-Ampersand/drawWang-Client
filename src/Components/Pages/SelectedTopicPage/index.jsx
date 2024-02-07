@@ -22,6 +22,9 @@ const SelectedTopic = ({
   selectedFilter,
   setSelectedFilter,
 }) => {
+  const NumberOfPictures = 10;
+  const SlideWidth = 740 * NumberOfPictures;
+
   return (
     topics === "학교" && (
       <s.SelectedTopicContainer>
@@ -36,11 +39,12 @@ const SelectedTopic = ({
           }}
         >
           <CreateNewBox />
-          <PictureBox onPictureArrowClick={handlePictureArrowClick} />
-          <PictureBox />
-          <PictureBox />
-          <PictureBox />
-          <PictureBox />
+          {Array.from({ length: NumberOfPictures }).map((_, index) => (
+            <PictureBox
+              key={index}
+              onPictureArrowClick={handlePictureArrowClick}
+            />
+          ))}
         </s.TopicsContainer>
         {/* 선택된 스레드가 1번이면 열릴 페이지 topicpicturepage */}
         {selectedPicture === 1 && (
@@ -57,7 +61,7 @@ const SelectedTopic = ({
         )}
         <s.SwipeRightArrowButton
           onClick={handleSwipeRight}
-          style={{ display: slidePx <= -1500 ? "none" : "flex" }}
+          style={{ display: slidePx <= -SlideWidth + 1200 ? "none" : "flex" }}
         >
           <SwipeRightArrowSVG />
         </s.SwipeRightArrowButton>

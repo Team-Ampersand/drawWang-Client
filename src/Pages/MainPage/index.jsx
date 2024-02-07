@@ -11,23 +11,25 @@ function MainPage() {
   const [inputValue, setInputValue] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [topicsExist, setTopicsExist] = useState(true);
-  const [slidePx, setSlidePx] = useState(0); // 추후 서버에서 받아온 데이터로 변경
-  const [typeTopicPopUpEnabled, setTypeTopicPopUpEnabled] = useState(false); // 추후 서버에서 받아온 데이터로 변경
-  const [sameTopicAlreadyExist, setSameTopicAlreadyExist] = useState(false); // 추후 서버에서 받아온 데이터로 변경
+  const [slidePx, setSlidePx] = useState(0);
+  const [typeTopicPopUpEnabled, setTypeTopicPopUpEnabled] = useState(false);
+  const [sameTopicAlreadyExist, setSameTopicAlreadyExist] = useState(false);
   const [topics, setTopics] = useState("");
   const [selectedFilter, setSelectedFilter] = useState("like");
   const [selectedPicture, setSelectedPicture] = useState(null);
   const [reportPopUpEnabled, setReportPopUpEnabled] = useState(false);
   const [reportType, setReportType] = useState("topic");
+  const NumberOfThread = 9;
+  const SlideWidth = 740 * NumberOfThread;
 
   const handleSwipeRight = () => {
-    const newSlidePx = slidePx - 1200;
-    setSlidePx(newSlidePx);
+    const newSlidePx = slidePx - 650;
+    setSlidePx(newSlidePx < -SlideWidth ? -SlideWidth : newSlidePx);
   };
 
   const handleSwipeLeft = () => {
-    const newSlidePx = slidePx + 1200;
-    setSlidePx(newSlidePx);
+    const newSlidePx = slidePx + 650;
+    setSlidePx(newSlidePx > 0 ? 0 : newSlidePx);
   };
 
   const handleTypeTopicPopUp = () => {
@@ -78,13 +80,10 @@ function MainPage() {
                 transition: "transform 0.3s ease-in-out",
               }}
             >
-              <TopicBox onTopicArrowClick={handleTopicArrowClick} />
-              <TopicBox />
-              <TopicBox />
-              <TopicBox />
-              <TopicBox />
+              {Array.from({ length: NumberOfThread }).map(() => (
+                <TopicBox onTopicArrowClick={handleTopicArrowClick} />
+              ))}
             </s.TopicsContainer>
-            {/* 토픽이 학교면 열리는 페이지 SelectedTopicPage */}
             {topics === "학교" && (
               <SelectedTopicPage
                 topics={topics}
@@ -115,7 +114,9 @@ function MainPage() {
             </s.CreateThreadText>
             <s.SwipeRightArrowButton
               onClick={handleSwipeRight}
-              style={{ display: slidePx <= -1500 ? "none" : "flex" }} // 추후 서버에서 받아온 데이터로 변경
+              style={{
+                display: slidePx <= -SlideWidth + 1200 ? "none" : "flex",
+              }}
             >
               <SwipeRightArrowSVG />
             </s.SwipeRightArrowButton>
@@ -126,7 +127,6 @@ function MainPage() {
               <SwipeLeftArrowSVG />
             </s.SwipeLeftArrowButton>
           </s.TopicsMainContainer>
-          {/* 스레드 만들기 눌리면 열리는 팝업 */}
           {typeTopicPopUpEnabled && (
             <>
               <CreateThread
