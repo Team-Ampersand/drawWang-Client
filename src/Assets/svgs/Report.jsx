@@ -14,27 +14,27 @@ export default function Report() {
           id="Vector 26"
           d="M4 32L32 32"
           stroke="black"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector 27"
           d="M30 12.129C30 1.29032 6 1.29032 6 12.129V32H30V12.129Z"
           fill="#FF0000"
           stroke="black"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector 28"
           d="M12 20.3636V32H24V20.3636C24 14.5455 12 14.5455 12 20.3636Z"
           fill="#FF6B00"
           stroke="black"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>

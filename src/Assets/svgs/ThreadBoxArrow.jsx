@@ -14,9 +14,9 @@ export default function ThreadBoxArrow() {
           id="Vector 5"
           d="M12 32L24 18L12 4"
           stroke="black"
-          stroke-width="3"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>

@@ -14,17 +14,17 @@ export default function Plus() {
           id="Vector 10"
           d="M30 9.30774V44.6924"
           stroke="#595959"
-          stroke-width="4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector 11"
           d="M50 27L10 27"
           stroke="#595959"
-          stroke-width="4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>

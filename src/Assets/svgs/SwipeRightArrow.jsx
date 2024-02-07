@@ -12,9 +12,9 @@ export default function SwipeRightArrow() {
       <path
         d="M8 22L16 12L8 2"
         stroke="black"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
