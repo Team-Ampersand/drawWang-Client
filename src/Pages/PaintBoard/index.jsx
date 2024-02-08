@@ -3,7 +3,7 @@ import * as S from "./Style";
 import PaintBoardTools from "../../Components/PaintBoardTools";
 import Cursor from "../../Components/Cursor";
 import { SwipeLeftArrowSVG } from "../../Assets/svgs";
-
+import ToolHideImage from '../../Assets/pngs/ToolHide.png';
 const PaintBoard = () => {
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
@@ -164,7 +164,7 @@ const PaintBoard = () => {
         />
       </S.CanvasContainer>
       <button onClick={saveDrawing}>저장</button>
-      <PaintBoardTools
+      {selectedTool===null? <S.ToolHideImage src={ToolHideImage} onClick={()=>{setSelectedTool("tool")}}/>:<PaintBoardTools
         color={color}
         setColor={setColor}
         changeColor={changeColor}
@@ -179,7 +179,8 @@ const PaintBoard = () => {
         setSelectedTool={setSelectedTool}
         undoStroke={undoStroke}
         redoStroke={redoStroke}
-      />
+      />}
+      
     </>
   );
 };

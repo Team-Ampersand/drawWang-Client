@@ -40,3 +40,10 @@ export const DrawNavContainer = styled.div`
   z-index: 2;
   align-items: center;
 `;
+
+export const ToolHideImage =styled.img`
+position:absolute;
+bottom:0;
+left: 50%;
+transform: translateX(-50%);
+`

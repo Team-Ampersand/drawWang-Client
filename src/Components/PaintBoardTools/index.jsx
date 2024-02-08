@@ -26,12 +26,10 @@ const PaintBoardTools = ({
     <S.Toolbar>
       <S.ToolItem
         onClick={() => {
-          if (selectedTool !== "pen") {
-            setSelectedTool("pen");
-            if (originalColor) {
-              setColor(originalColor);
-              setOriginalColor(null);
-            }
+          setSelectedTool(selectedTool === "pen" ? "" : "pen");
+          if (originalColor) {
+            setColor(originalColor);
+            setOriginalColor(null);
           }
         }}
         style={{ cursor: "pointer" }}
@@ -66,7 +64,7 @@ const PaintBoardTools = ({
         <RedoSVG />
         <S.ToolPick>{selectedTool === "redo" && <PickToolbarSVG />}</S.ToolPick>
       </S.ToolItem>
-      <S.ToolItem onClick={() => setSelectedTool(selectedTool === "color" ? null : "color")} style={{ cursor: "pointer" }}>
+      <S.ToolItem onClick={() => setSelectedTool(selectedTool === "color" ? "" : "color")} style={{ cursor: "pointer" }}>
         <ColorPickerSVG color={color} />
         <S.ToolBox>{selectedTool === "color" && <ColorToolSettings color={color} changeColor={changeColor} />}</S.ToolBox>
       </S.ToolItem>
