@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.div`
   height: 80px;
@@ -25,8 +26,14 @@ export const NavBox = styled.div`
   transform: translateX(-50%);
 `;
 
-export const NavItem = styled.p`
+export const NavItem = styled(Link)`
   font-size: 18px;
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const SearchBox = styled.div`

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MedalPng from "../../Assets/pngs/Medal.png";
+import { BlueCircleSVG, GrayCircleSVG } from "../../Assets/svgs";
 
 export const MainContainer = styled.div`
   height: calc(100vh - 80px);
@@ -14,9 +15,37 @@ export const HallOfFameBox = styled.div`
   align-self: center;
   width: 700px;
   height: 700px;
+  border: 0;
+  outline: none;
   margin-top: 66px;
   margin-bottom: 230px;
   flex-direction: column;
+`;
+
+export const HallOfFameMainContainer = styled.div`
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const HallOfFameContainer = styled.div`
+  display: flex;
+  gap: 100px;
+  padding: 0 80px;
+  margin-left: 80px;
+  width: 100%;
+  position: fixed;
+`;
+
+export const HallOfFameThreadBoxTitle = styled.div`
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: -0.48px;
+  position: absolute;
+  top: 16%;
 `;
 
 export const HallOfFameImg = styled.div`
@@ -26,9 +55,13 @@ export const HallOfFameImg = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  border: none;
+  outline: none;
 `;
 
 export const HallOfFameTextBox = styled.div`
+  border: none;
+  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,4 +104,34 @@ export const SelectWrapper = styled.div`
 export const SelectDateText = styled.div`
   font-size: 18px;
   font-weight: 400;
-`; 
+`;
+
+export const SwipeRightArrowButton = styled.div`
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 1%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+`;
+
+export const SwipeLeftArrowButton = styled.div`
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 1%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+`;
