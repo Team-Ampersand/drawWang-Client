@@ -4,6 +4,7 @@ import PaintBoardTools from "../../Components/PaintBoardTools";
 import Cursor from "../../Components/Cursor";
 import { SwipeLeftArrowSVG } from "../../Assets/svgs";
 import ToolHideImage from '../../Assets/pngs/ToolHide.png';
+
 const PaintBoard = () => {
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);

@@ -19,6 +19,7 @@ export const Circle = styled.div`
     `
   border: 1px solid gray;
 `}
+
   ${(props) => props.BrushCap === "round" && ` border-radius: 50%;`};
   position: absolute;
   top: 50%;

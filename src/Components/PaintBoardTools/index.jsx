@@ -6,6 +6,7 @@ import { BackSVG, RedoSVG, PenSVG, EraserSVG, ColorPickerSVG, PickToolbarSVG } f
 import EraserToolSettings from "./EraserToolSettings";
 import PenToolSettings from "./PenToolSettings";
 import ColorToolSettings from "./ColorToolSettings";
+
 const PaintBoardTools = ({
   color,
   setColor,

@@ -7,6 +7,7 @@ import HallOfFamePage from "./Pages/HallOfFamePage/index";
 import GlobalStyle from "./Styles/GlobalStyle";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PaintBoard from "./Pages/PaintBoard";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
