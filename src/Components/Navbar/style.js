@@ -52,6 +52,7 @@ export const SearchBox = styled.div`
     width: 36px;
     height: 36px;
   }
+  box-sizing: border-box;
 `;
 
 export const SearchInput = styled.input`
@@ -71,4 +72,8 @@ export const SearchInput = styled.input`
   &::placeholder {
     color: #8c8c8c;
   }
+`;
+
+export const SearchContainer = styled.div`
+  position: relative;
 `;
