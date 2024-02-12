@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./Style";
+import * as s from "./Style";
 
 import { BackSVG, RedoSVG, PenSVG, EraserSVG, ColorPickerSVG, PickToolbarSVG } from "../../Assets/svgs/index";
 
@@ -24,8 +24,8 @@ const PaintBoardTools = ({
   redoStroke,
 }) => {
   return (
-    <S.Toolbar>
-      <S.ToolItem
+    <s.Toolbar>
+      <s.ToolItem
         onClick={() => {
           setSelectedTool(selectedTool === "pen" ? "" : "pen");
           if (originalColor) {
@@ -39,9 +39,9 @@ const PaintBoardTools = ({
         {selectedTool === "pen" && (
           <PenToolSettings color={color} BrushCap={BrushCap} BrushWidth={BrushWidth} setBrushWidth={setBrushWidth} setBrushCap={setBrushCap} />
         )}
-      </S.ToolItem>
+      </s.ToolItem>
 
-      <S.ToolItem
+      <s.ToolItem
         onClick={() => {
           if (selectedTool !== "eraser") {
             setSelectedTool("eraser");
@@ -55,21 +55,21 @@ const PaintBoardTools = ({
         {selectedTool === "eraser" && (
           <EraserToolSettings BrushCap={BrushCap} BrushWidth={BrushWidth} setBrushWidth={setBrushWidth} setBrushCap={setBrushCap} AllDelete={AllDelect} />
         )}
-      </S.ToolItem>
+      </s.ToolItem>
 
-      <S.ToolItem onClick={undoStroke} style={{ cursor: "pointer" }}>
+      <s.ToolItem onClick={undoStroke} style={{ cursor: "pointer" }}>
         <BackSVG />
-        <S.ToolPick>{selectedTool === "undo" && <PickToolbarSVG />}</S.ToolPick>
-      </S.ToolItem>
-      <S.ToolItem onClick={redoStroke} style={{ cursor: "pointer" }}>
+        <s.ToolPick>{selectedTool === "undo" && <PickToolbarSVG />}</s.ToolPick>
+      </s.ToolItem>
+      <s.ToolItem onClick={redoStroke} style={{ cursor: "pointer" }}>
         <RedoSVG />
-        <S.ToolPick>{selectedTool === "redo" && <PickToolbarSVG />}</S.ToolPick>
-      </S.ToolItem>
-      <S.ToolItem onClick={() => setSelectedTool(selectedTool === "color" ? "" : "color")} style={{ cursor: "pointer" }}>
+        <s.ToolPick>{selectedTool === "redo" && <PickToolbarSVG />}</s.ToolPick>
+      </s.ToolItem>
+      <s.ToolItem onClick={() => setSelectedTool(selectedTool === "color" ? "" : "color")} style={{ cursor: "pointer" }}>
         <ColorPickerSVG color={color} />
-        <S.ToolBox>{selectedTool === "color" && <ColorToolSettings color={color} changeColor={changeColor} />}</S.ToolBox>
-      </S.ToolItem>
-    </S.Toolbar>
+        <s.ToolBox>{selectedTool === "color" && <ColorToolSettings color={color} changeColor={changeColor} />}</s.ToolBox>
+      </s.ToolItem>
+    </s.Toolbar>
   );
 };
 
