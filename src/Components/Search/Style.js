@@ -11,6 +11,7 @@ export const SearchItem = styled.div`
   line-height: 30px;
   letter-spacing: -0.22px;
 `;
+
 export const SearchItemTitle = styled.div`
   display: flex;
   align-items: center;
@@ -19,6 +20,7 @@ export const SearchItemTitle = styled.div`
     gap: 16px;
   }
 `;
+
 export const SearchBox = styled.div`
   display: grid;
   gap: 16px;
@@ -30,12 +32,14 @@ export const SearchBox = styled.div`
   padding: 32px;
   box-shadow: 4px 4px 30px 0px rgba(0, 0, 0, 0.08);
 `;
+
 export const SearchBoxContainer = styled.div`
   position: absolute;
   top: 76px;
   right: 36px;
   z-index: 1;
 `;
+
 export const PopularThreadText = styled.div`
   color: var(--Gray-8c8c8c, #8c8c8c);
   font-size: 18px;
