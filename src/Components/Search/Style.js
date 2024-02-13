@@ -24,7 +24,7 @@ export const SearchBox = styled.div`
   gap: 16px;
   box-sizing: border-box;
   width: 448px;
-  backgroundcolor: #999;
+  background-color: #999;
   border-radius: 20px;
   background: #fff;
   padding: 32px;
