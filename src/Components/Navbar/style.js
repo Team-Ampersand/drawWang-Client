@@ -39,7 +39,6 @@ export const NavItem = styled(Link)`
 export const SearchBox = styled.div`
   width: 420px;
   height: 54px;
-  padding: 10 20px;
   align-items: center;
   gap: 10px;
   border-radius: 30px;

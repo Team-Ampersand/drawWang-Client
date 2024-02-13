@@ -35,8 +35,8 @@ export const SearchBox = styled.div`
 
 export const SearchBoxContainer = styled.div`
   position: absolute;
-  top: 76px;
-  right: 36px;
+  top: 66px;
+  right: 0;
   z-index: 1;
 `;
 
