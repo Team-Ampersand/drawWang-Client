@@ -8,9 +8,9 @@ export default function ArrowRotation() {
           id="Vector 30"
           d="M18.5355 5.53553L18.9077 12.2344M18.5355 5.53553L11.8366 5.16337M18.5355 5.53553L6.51472 17.5563"
           stroke="#8C8C8C"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
