@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import * as S from "./Style";
+import * as s from "./Style";
 import PaintBoardTools from "../../Components/PaintBoardTools";
 import Cursor from "../../Components/Cursor";
 import { SwipeLeftArrowSVG } from "../../Assets/svgs";
@@ -142,18 +142,18 @@ const PaintBoard = () => {
 
   return (
     <> 
-      <S.DrawNavContainer>
-        <S.DrawNav>
-          <S.DrawItem style={{ cursor: "pointer" }}>{<SwipeLeftArrowSVG />}</S.DrawItem>
-          <S.DrawItem>학교</S.DrawItem>
-          <S.DrawItem style={{ cursor: "pointer" }}>
-            <S.DrawFinish>완료</S.DrawFinish>
-          </S.DrawItem>
-        </S.DrawNav>
-      </S.DrawNavContainer>
+      <s.DrawNavContainer>
+        <s.DrawNav>
+          <s.DrawItem style={{ cursor: "pointer" }}>{<SwipeLeftArrowSVG />}</s.DrawItem>
+          <s.DrawItem>학교</s.DrawItem>
+          <s.DrawItem style={{ cursor: "pointer" }}>
+            <s.DrawFinish>완료</s.DrawFinish>
+          </s.DrawItem>
+        </s.DrawNav>
+      </s.DrawNavContainer>
 
       {MouseIn && <Cursor BrushCap={BrushCap} BrushWidth={BrushWidth} color={color} />}
-      <S.CanvasContainer>
+      <s.CanvasContainer>
         <canvas
           onMouseEnter={() => setMouseIn(true)}
           onMouseLeave={() => setMouseIn(false)}
@@ -163,9 +163,9 @@ const PaintBoard = () => {
           onMouseUp={stopDrawing}
           onMouseOut={stopDrawing}
         />
-      </S.CanvasContainer>
+      </s.CanvasContainer>
       <button onClick={saveDrawing}>저장</button>
-      {selectedTool===null? <S.ToolHideImage src={ToolHideImage} onClick={()=>{setSelectedTool("tool")}}/>:<PaintBoardTools
+      {selectedTool===null? <s.ToolHideImage src={ToolHideImage} onClick={()=>{setSelectedTool("tool")}}/>:<PaintBoardTools
         color={color}
         setColor={setColor}
         changeColor={changeColor}

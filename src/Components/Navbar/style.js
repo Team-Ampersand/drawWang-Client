@@ -39,7 +39,6 @@ export const NavItem = styled(Link)`
 export const SearchBox = styled.div`
   width: 420px;
   height: 54px;
-  padding: 10 20px;
   align-items: center;
   gap: 10px;
   border-radius: 30px;
@@ -52,6 +51,7 @@ export const SearchBox = styled.div`
     width: 36px;
     height: 36px;
   }
+  box-sizing: border-box;
 `;
 
 export const SearchInput = styled.input`
@@ -71,4 +71,8 @@ export const SearchInput = styled.input`
   &::placeholder {
     color: #8c8c8c;
   }
+`;
+
+export const SearchContainer = styled.div`
+  position: relative;
 `;
