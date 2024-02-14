@@ -12,7 +12,7 @@ import ThreadBox from "../../Components/ThreadBox/halloffame";
 function HallOfFamePage() {
   const [selected, setSelected] = useState("today");
   const [slidePx, setSlidePx] = useState(0);
-  const ThreadBoxCount = 0;
+  const ThreadBoxCount = 10;
   const SlideWidth = 650 * ThreadBoxCount;
 
   const handleSwipeRight = () => {
