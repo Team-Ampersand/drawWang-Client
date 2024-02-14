@@ -14,4 +14,5 @@ export { default as RedoSVG } from "./Redo.jsx";
 export { default as ColorPickerSVG } from "./ColorPicker.jsx";
 export { default as ToolBoxSVG } from "./ToolBox.jsx";
 export {default as PickToolbarSVG} from "./PickToolbar.jsx";
-export {default as ArrowRotationSVG} from "./ArrowRotation.jsx"
+export {default as ArrowRotationSVG} from "./ArrowRotation.jsx";
+export {default as ChevronLeftSVG} from "./ChevronLeft.jsx";
