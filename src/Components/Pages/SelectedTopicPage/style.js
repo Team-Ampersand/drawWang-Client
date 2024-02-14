@@ -100,3 +100,11 @@ export const SelectFilterText = styled.div`
   font-size: 18px;
   font-weight: 400;
 `;
+
+export const TopTitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  position: relative;
+  right: 22px;
+`;
