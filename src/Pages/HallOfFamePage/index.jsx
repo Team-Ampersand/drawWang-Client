@@ -28,47 +28,51 @@ function HallOfFamePage() {
   return (
     <>
       <Navbar />
-        <s.HallOfFameMainContainer>
-          <s.SelectDateBox>
-            <s.SelectWrapper onClick={() => setSelected("today")}>
-              {selected === "today" ? <BlueCircleSVG /> : <GrayCircleSVG />}
-              <s.SelectDateText
-                className={selected === "today" ? "active" : ""}
-              >
-                오늘
-              </s.SelectDateText>
-            </s.SelectWrapper>
-            <s.SelectWrapper onClick={() => setSelected("all")}>
-              {selected === "all" ? <BlueCircleSVG /> : <GrayCircleSVG />}
-              <s.SelectDateText className={selected === "all" ? "active" : ""}>
-                전체
-              </s.SelectDateText>
-            </s.SelectWrapper>
-          </s.SelectDateBox>
-          {
-            ThreadBoxCount?<>          <s.HallOfFameThreadBoxTitle>명예의 전당</s.HallOfFameThreadBoxTitle>
-<s.HallOfFameContainer
-            style={{
-              transform: `translateX(${slidePx}px)`,
-              transition: "transform 0.3s ease-in-out",
-            }}
-          >
-            {Array.from({ length: ThreadBoxCount }).map((_, index) => (
-              <ThreadBox key={index} />
-            ))}
-          </s.HallOfFameContainer> 
-          <s.SwipeRightArrowButton
-            onClick={handleSwipeRight}
-            style={{ display: slidePx <= -SlideWidth + 650 ? "none" : "flex" }}
-          >
-            <SwipeRightArrowSVG />
-          </s.SwipeRightArrowButton>
-          <s.SwipeLeftArrowButton
-            onClick={handleSwipeLeft}
-            style={{ display: slidePx >= 0 ? "none" : "flex" }}
-          >
-            <SwipeLeftArrowSVG />
-          </s.SwipeLeftArrowButton></>:
+      <s.HallOfFameMainContainer>
+        <s.SelectDateBox>
+          <s.SelectWrapper onClick={() => setSelected("today")}>
+            {selected === "today" ? <BlueCircleSVG /> : <GrayCircleSVG />}
+            <s.SelectDateText className={selected === "today" ? "active" : ""}>
+              오늘
+            </s.SelectDateText>
+          </s.SelectWrapper>
+          <s.SelectWrapper onClick={() => setSelected("all")}>
+            {selected === "all" ? <BlueCircleSVG /> : <GrayCircleSVG />}
+            <s.SelectDateText className={selected === "all" ? "active" : ""}>
+              전체
+            </s.SelectDateText>
+          </s.SelectWrapper>
+        </s.SelectDateBox>
+        {ThreadBoxCount ? (
+          <>
+            {" "}
+            <s.HallOfFameThreadBoxTitle>명예의 전당</s.HallOfFameThreadBoxTitle>
+            <s.HallOfFameContainer
+              style={{
+                transform: `translateX(${slidePx}px)`,
+                transition: "transform 0.3s ease-in-out",
+              }}
+            >
+              {Array.from({ length: ThreadBoxCount }).map((_, index) => (
+                <ThreadBox key={index} />
+              ))}
+            </s.HallOfFameContainer>
+            <s.SwipeRightArrowButton
+              onClick={handleSwipeRight}
+              style={{
+                display: slidePx <= -SlideWidth + 650 ? "none" : "flex",
+              }}
+            >
+              <SwipeRightArrowSVG />
+            </s.SwipeRightArrowButton>
+            <s.SwipeLeftArrowButton
+              onClick={handleSwipeLeft}
+              style={{ display: slidePx >= 0 ? "none" : "flex" }}
+            >
+              <SwipeLeftArrowSVG />
+            </s.SwipeLeftArrowButton>
+          </>
+        ) : (
           <s.HallOfFameBox>
             <s.HallOfFameImg />
             <s.HallOfFameTextBox>
@@ -80,10 +84,8 @@ function HallOfFamePage() {
               </s.HallOfFameDesc>
             </s.HallOfFameTextBox>
           </s.HallOfFameBox>
-          }
-          
-         
-        </s.HallOfFameMainContainer>
+        )}
+      </s.HallOfFameMainContainer>
     </>
   );
 }

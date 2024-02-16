@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import * as s from "./style";
-import { SearchSVG, MenuBarSVG } from "../../Assets/svgs";
+import { SearchSVG } from "../../Assets/svgs";
 import Search from "../../Components/Search";
-import NavMenu from "../../Components/PopUp/navmenu";
 import CreateThread from "../../Components/PopUp/createthread";
 
-function Navbar() {
+function NavMenu({ isNavMenuClicked, setIsNavMenuClicked }) {
   const [search, setSearch] = useState(false);
   const [searchContent, setSearchContent] = useState("");
-  const [isNavMenuClicked, setIsNavMenuClicked] = useState(false);
+  const [isCreateThreadClicked, setIsCreateThreadClicked] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [sameTopicAlreadyExist, setSameTopicAlreadyExist] = useState(false);
 
@@ -16,11 +15,16 @@ function Navbar() {
     setIsNavMenuClicked(!isNavMenuClicked);
   };
 
+  const handleCreateThreadClick = () => {
+    setIsCreateThreadClicked(true);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       const searchBox = document.querySelector(".search-box");
       if (searchBox && !searchBox.contains(event.target)) {
         setSearchContent("");
+        setSearch(false); // 클릭한 위치가 검색 박스 외부라면 검색 비활성화
       }
     };
 
@@ -34,17 +38,22 @@ function Navbar() {
     setInputValue(event.target.value);
   };
 
+  const testFunc = () => {
+    setSameTopicAlreadyExist(!sameTopicAlreadyExist);
+  };
+
+  const handleTypeTopicPopUp = () => {
+    setIsCreateThreadClicked(false);
+  };
+
   return (
     <>
-      <s.NavbarContainer>
-        <s.NavBox>
-          <s.NavItem to="/">주제</s.NavItem>
-          <s.NavItem to="/halloffame">명예의 전당</s.NavItem>
-        </s.NavBox>
-        <s.SearchContainer>
-          <s.SearchBox className="search-box">
+      <s.NavMenuBackground onClick={handleNavMenuClick} />
+      <s.NavMenuContainer>
+        <s.NavMenuSearchContainer>
+          <s.NavMenuSearchBox className="search-box">
             <SearchSVG />
-            <s.SearchInput
+            <s.NavMenuSearchInput
               onFocus={() => setSearch(true)}
               value={searchContent}
               onChange={(e) => {
@@ -55,31 +64,32 @@ function Navbar() {
               placeholder="찾으시는 스레드가 있으신가요?"
             />
             <Search search={search} searchContent={searchContent} />
-          </s.SearchBox>
-        </s.SearchContainer>
-        <s.NavMenuBar onClick={handleNavMenuClick}>
-          <MenuBarSVG />
-        </s.NavMenuBar>
-      </s.NavbarContainer>
-      {isNavMenuClicked ? (
-        <NavMenu
-          isNavMenuClicked={isNavMenuClicked}
-          setIsNavMenuClicked={setIsNavMenuClicked}
-        />
-      ) : (
-        ""
-      )}
-      {sameTopicAlreadyExist && (
+          </s.NavMenuSearchBox>
+        </s.NavMenuSearchContainer>
+        {!search && ( // search가 false일 때만 렌더링
+          <s.NavMenuUl>
+            <s.NavMenuLi>주제</s.NavMenuLi>
+            <s.NavMenuLi>명예의 전당</s.NavMenuLi>
+          </s.NavMenuUl>
+        )}
+        <s.CreateThreadText>
+          찾으시는 스레드가 없나요?{" "}
+          <s.CreateThreadButtonText onClick={handleCreateThreadClick}>
+            스레드 만들기
+          </s.CreateThreadButtonText>
+        </s.CreateThreadText>
+      </s.NavMenuContainer>
+      {isCreateThreadClicked && (
         <CreateThread
           inputValue={inputValue}
           sameTopicAlreadyExist={sameTopicAlreadyExist}
           handleInputChange={handleInputChange}
-          testFunc={() => setSameTopicAlreadyExist(false)}
-          handleTypeTopicPopUp={() => setSameTopicAlreadyExist(false)}
+          testFunc={testFunc}
+          handleTypeTopicPopUp={handleTypeTopicPopUp}
         />
       )}
     </>
   );
 }
 
-export default Navbar;
+export default NavMenu;

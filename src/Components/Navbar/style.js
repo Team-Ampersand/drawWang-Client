@@ -24,6 +24,10 @@ export const NavBox = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const NavItem = styled(Link)`
@@ -52,6 +56,22 @@ export const SearchBox = styled.div`
     height: 36px;
   }
   box-sizing: border-box;
+
+  @media screen and (max-width: 1386px) {
+    width: 350px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 1096px) {
+    width: 250px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -71,8 +91,28 @@ export const SearchInput = styled.input`
   &::placeholder {
     color: #8c8c8c;
   }
+
+  @media screen and (max-width: 1200px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 1096px) {
+    &::placeholder {
+      color: transparent;
+    }
+  }
 `;
 
 export const SearchContainer = styled.div`
   position: relative;
+`;
+
+export const NavMenuBar = styled.div`
+  display: none;
+  cursor: pointer;
+  margin-top: 75px;
+
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
 `;
