@@ -11,8 +11,6 @@ import ThreadBox from "../../Components/ThreadBox/halloffame";
 
 function HallOfFamePage() {
   const [selected, setSelected] = useState("today");
-  // eslint-disable-next-line no-unused-vars
-  const [hallOfFameExist, setHallOfFameExist] = useState(true);
   const [slidePx, setSlidePx] = useState(0);
   const ThreadBoxCount = 10;
   const SlideWidth = 650 * ThreadBoxCount;
@@ -30,19 +28,7 @@ function HallOfFamePage() {
   return (
     <>
       <Navbar />
-      {hallOfFameExist ? (
         <s.HallOfFameMainContainer>
-          <s.HallOfFameThreadBoxTitle>명예의 전당</s.HallOfFameThreadBoxTitle>
-          <s.HallOfFameContainer
-            style={{
-              transform: `translateX(${slidePx}px)`,
-              transition: "transform 0.3s ease-in-out",
-            }}
-          >
-            {Array.from({ length: ThreadBoxCount }).map((_, index) => (
-              <ThreadBox key={index} />
-            ))}
-          </s.HallOfFameContainer>
           <s.SelectDateBox>
             <s.SelectWrapper onClick={() => setSelected("today")}>
               {selected === "today" ? <BlueCircleSVG /> : <GrayCircleSVG />}
@@ -59,6 +45,18 @@ function HallOfFamePage() {
               </s.SelectDateText>
             </s.SelectWrapper>
           </s.SelectDateBox>
+          {
+            ThreadBoxCount?<>          <s.HallOfFameThreadBoxTitle>명예의 전당</s.HallOfFameThreadBoxTitle>
+<s.HallOfFameContainer
+            style={{
+              transform: `translateX(${slidePx}px)`,
+              transition: "transform 0.3s ease-in-out",
+            }}
+          >
+            {Array.from({ length: ThreadBoxCount }).map((_, index) => (
+              <ThreadBox key={index} />
+            ))}
+          </s.HallOfFameContainer> 
           <s.SwipeRightArrowButton
             onClick={handleSwipeRight}
             style={{ display: slidePx <= -SlideWidth + 650 ? "none" : "flex" }}
@@ -70,10 +68,7 @@ function HallOfFamePage() {
             style={{ display: slidePx >= 0 ? "none" : "flex" }}
           >
             <SwipeLeftArrowSVG />
-          </s.SwipeLeftArrowButton>
-        </s.HallOfFameMainContainer>
-      ) : (
-        <s.MainContainer>
+          </s.SwipeLeftArrowButton></>:
           <s.HallOfFameBox>
             <s.HallOfFameImg />
             <s.HallOfFameTextBox>
@@ -85,24 +80,10 @@ function HallOfFamePage() {
               </s.HallOfFameDesc>
             </s.HallOfFameTextBox>
           </s.HallOfFameBox>
-          <s.SelectDateBox>
-            <s.SelectWrapper onClick={() => setSelected("today")}>
-              {selected === "today" ? <BlueCircleSVG /> : <GrayCircleSVG />}
-              <s.SelectDateText
-                className={selected === "today" ? "active" : ""}
-              >
-                오늘
-              </s.SelectDateText>
-            </s.SelectWrapper>
-            <s.SelectWrapper onClick={() => setSelected("all")}>
-              {selected === "all" ? <BlueCircleSVG /> : <GrayCircleSVG />}
-              <s.SelectDateText className={selected === "all" ? "active" : ""}>
-                전체
-              </s.SelectDateText>
-            </s.SelectWrapper>
-          </s.SelectDateBox>
-        </s.MainContainer>
-      )}
+          }
+          
+         
+        </s.HallOfFameMainContainer>
     </>
   );
 }

@@ -9,8 +9,6 @@ import CreateThread from "../../Components/PopUp/createthread";
 
 function MainPage() {
   const [inputValue, setInputValue] = useState("");
-  // eslint-disable-next-line no-unused-vars
-  const [topicsExist, setTopicsExist] = useState(true);
   const [slidePx, setSlidePx] = useState(0);
   const [typeTopicPopUpEnabled, setTypeTopicPopUpEnabled] = useState(false);
   const [sameTopicAlreadyExist, setSameTopicAlreadyExist] = useState(false);
@@ -71,7 +69,7 @@ function MainPage() {
   return (
     <>
       <Navbar />
-      {topicsExist ? (
+      {NumberOfThread ? (
         <>
           <s.TopicsMainContainer>
             <s.TopicsContainer
