@@ -85,6 +85,10 @@ export const NavMenuUl = styled.ul`
   gap: 60px;
   z-index: 6;
   margin-top: 60px;
+
+  @media screen and (max-width: 1025px) {
+    width: 370px;
+  }
   
   @media screen and (max-width: 768px) {
     width: 320px;

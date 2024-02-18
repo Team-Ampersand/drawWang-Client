@@ -24,7 +24,7 @@ function NavMenu({ isNavMenuClicked, setIsNavMenuClicked }) {
       const searchBox = document.querySelector(".search-box");
       if (searchBox && !searchBox.contains(event.target)) {
         setSearchContent("");
-        setSearch(false); // 클릭한 위치가 검색 박스 외부라면 검색 비활성화
+        setSearch(false);
       }
     };
 

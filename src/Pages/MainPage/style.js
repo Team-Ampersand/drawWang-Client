@@ -20,6 +20,20 @@ export const TopicsContainer = styled.div`
   margin-left: 80px;
   width: 100%;
   position: fixed;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0px;
+    height: calc( 100vh - 170px );
+    padding-top: 40px;
+    margin-bottom: 20px;
+    margin-top: 70px;
+    overflow-y: scroll;
+    position: static;
+    overflow-x: hidden;
+  }
 `;
 
 export const PopUpBackground = styled.div`
@@ -74,6 +88,10 @@ export const CreateThreadText = styled.footer`
   bottom: 0;
   margin-bottom: 3.5vh;
   letter-spacing: -0.22px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const CreateThreadButtonText = styled.span`
@@ -84,6 +102,10 @@ export const CreateThreadButtonText = styled.span`
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -176,6 +198,10 @@ export const SwipeRightArrowButton = styled.div`
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
 `;
 
 export const SwipeLeftArrowButton = styled.div`
@@ -191,4 +217,8 @@ export const SwipeLeftArrowButton = styled.div`
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
 `;

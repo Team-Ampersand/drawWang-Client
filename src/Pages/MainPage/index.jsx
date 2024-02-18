@@ -17,7 +17,7 @@ function MainPage() {
   const [selectedPicture, setSelectedPicture] = useState(null);
   const [reportPopUpEnabled, setReportPopUpEnabled] = useState(false);
   const [reportType, setReportType] = useState("topic");
-  const NumberOfThread = 9;
+  const NumberOfThread = 6;
   const SlideWidth = 740 * NumberOfThread;
 
   const handleSwipeRight = () => {
