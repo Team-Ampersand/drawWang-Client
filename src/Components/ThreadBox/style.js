@@ -7,6 +7,7 @@ export const ThreadBoxContainer = styled.div`
   border-radius: 20px;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
   flex: 0 0 auto;
+  margin-bottom: 40px;
 
   &:hover {
     transform: translateY(-20px);
@@ -16,6 +17,11 @@ export const ThreadBoxContainer = styled.div`
   @media screen and (max-width: 768px) {
     width: 80vw;
     height: 300px;
+  }
+
+  @media screen and (max-width: 438px) {
+    width: 80vw;
+    height: 280px;
   }
 `;
 
@@ -34,6 +40,11 @@ export const ThreadBoxBottomContainer = styled.div`
   @media screen and (max-width: 768px) {
     height: 70px;
     margin-top: calc(300px - 70px);
+  }
+
+  @media screen and (max-width: 438px) {
+    height: 60px;
+    margin-top: calc(280px - 60px);
   }
 `;
 

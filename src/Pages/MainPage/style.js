@@ -15,18 +15,21 @@ export const TopicsMainContainer = styled.div`
 
 export const TopicsContainer = styled.div`
   display: flex;
-  gap: 100px;
   padding: 0 80px;
   margin-left: 80px;
   width: 100%;
   position: fixed;
+
+  @media screen and (min-width: 769px) {
+    gap: 100px;
+  }
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     margin-left: 0px;
-    height: calc( 100vh - 170px );
+    height: calc(100vh - 170px);
     padding-top: 40px;
     margin-bottom: 20px;
     margin-top: 70px;
