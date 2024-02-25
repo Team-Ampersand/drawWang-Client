@@ -15,12 +15,12 @@ export const ThreadBoxContainer = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    width: 80vw;
-    height: 300px;
+    width: 90vw;
+    height: 38vh;
   }
 
   @media screen and (max-width: 438px) {
-    width: 80vw;
+    width: 90vw;
     height: 280px;
   }
 `;
@@ -39,12 +39,12 @@ export const ThreadBoxBottomContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     height: 70px;
-    margin-top: calc(300px - 70px);
+    margin-top: calc(38vh - 70px);
   }
 
   @media screen and (max-width: 438px) {
-    height: 60px;
-    margin-top: calc(280px - 60px);
+    height: 70px;
+    margin-top: calc(280px - 70px);
   }
 `;
 
