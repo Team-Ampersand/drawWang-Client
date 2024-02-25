@@ -17,6 +17,7 @@ function MainPage() {
   const [selectedPicture, setSelectedPicture] = useState(null);
   const [reportPopUpEnabled, setReportPopUpEnabled] = useState(false);
   const [reportType, setReportType] = useState("topic");
+  const [topicsContainerVisible, setTopicsContainerVisible] = useState(true);
   const NumberOfThread = 6;
   const SlideWidth = 740 * NumberOfThread;
 
@@ -44,6 +45,7 @@ function MainPage() {
 
   const handleTopicArrowClick = () => {
     setTopics("학교");
+    setTopicsContainerVisible(false);
   };
 
   const handlePictureArrowClick = () => {
@@ -76,34 +78,13 @@ function MainPage() {
               style={{
                 transform: `translateX(${slidePx}px)`,
                 transition: "transform 0.3s ease-in-out",
+                display: topicsContainerVisible ? "flex" : "none",
               }}
             >
               {Array.from({ length: NumberOfThread }).map(() => (
                 <TopicBox onTopicArrowClick={handleTopicArrowClick} />
               ))}
             </s.TopicsContainer>
-            {topics === "학교" && (
-              <SelectedTopicPage
-                topics={topics}
-                slidePx={slidePx}
-                selectedPicture={selectedPicture}
-                handlePictureArrowClick={handlePictureArrowClick}
-                handleClosePicture={handleClosePicture}
-                handleReportPopUp={handleReportPopUp}
-                reportPopUpEnabled={reportPopUpEnabled}
-                reportType={reportType}
-                handleReportTypeTopicButtonClick={
-                  handleReportTypeTopicButtonClick
-                }
-                handleReportTypePictureButtonClick={
-                  handleReportTypePictureButtonClick
-                }
-                handleSwipeRight={handleSwipeRight}
-                handleSwipeLeft={handleSwipeLeft}
-                selectedFilter={selectedFilter}
-                setSelectedFilter={setSelectedFilter}
-              />
-            )}
             <s.CreateThreadText>
               찾으시는 스레드가 없나요?{" "}
               <s.CreateThreadButtonText onClick={handleTypeTopicPopUp}>
@@ -124,6 +105,30 @@ function MainPage() {
             >
               <SwipeLeftArrowSVG />
             </s.SwipeLeftArrowButton>
+            {topics === "학교" && (
+              <SelectedTopicPage
+                topics={topics}
+                slidePx={slidePx}
+                selectedPicture={selectedPicture}
+                handlePictureArrowClick={handlePictureArrowClick}
+                handleClosePicture={handleClosePicture}
+                handleReportPopUp={handleReportPopUp}
+                reportPopUpEnabled={reportPopUpEnabled}
+                reportType={reportType}
+                handleReportTypeTopicButtonClick={
+                  handleReportTypeTopicButtonClick
+                }
+                handleReportTypePictureButtonClick={
+                  handleReportTypePictureButtonClick
+                }
+                handleSwipeRight={handleSwipeRight}
+                handleSwipeLeft={handleSwipeLeft}
+                selectedFilter={selectedFilter}
+                setSelectedFilter={setSelectedFilter}
+                setTopics={setTopics}
+                setTopicsContainerVisible={setTopicsContainerVisible}
+              />
+            )}
           </s.TopicsMainContainer>
           {typeTopicPopUpEnabled && (
             <>

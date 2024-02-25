@@ -68,8 +68,8 @@ function NavMenu({ isNavMenuClicked, setIsNavMenuClicked }) {
         </s.NavMenuSearchContainer>
         {!search && ( // search가 false일 때만 렌더링
           <s.NavMenuUl>
-            <s.NavMenuLi>주제</s.NavMenuLi>
-            <s.NavMenuLi>명예의 전당</s.NavMenuLi>
+            <s.NavMenuLi to="/">주제</s.NavMenuLi>
+            <s.NavMenuLi to="/halloffame">명예의 전당</s.NavMenuLi>
           </s.NavMenuUl>
         )}
         <s.CreateThreadText>

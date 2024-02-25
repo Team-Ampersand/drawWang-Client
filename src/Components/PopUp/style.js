@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const NavMenuBackground = styled.div`
   width: 100%;
@@ -111,7 +112,7 @@ export const NavMenuUl = styled.ul`
   }
 `;
 
-export const NavMenuLi = styled.li`
+export const NavMenuLi = styled(Link)`
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -121,6 +122,11 @@ export const NavMenuLi = styled.li`
   cursor: pointer;
   z-index: 7;
   list-style: none;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const NavMenuSearchInput = styled.input`
@@ -469,4 +475,51 @@ export const ReportPicturePopUpSubmitButton = styled.div`
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.18px;
+`;
+
+export const FilterPopUpContainer = styled.div`
+  width: 164px;
+  height: 64px;
+  background-color: white;
+  position: absolute;
+  border-radius: 12px;
+  top: 160px;
+  right: 50px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10);
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const SelectFilterBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 90%;
+  gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+export const SelectFilterWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+`;
+
+export const SelectFilterText = styled.div`
+  font-size: 18px;
+  font-weight: 400;
 `;

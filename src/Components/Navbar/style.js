@@ -110,7 +110,7 @@ export const SearchContainer = styled.div`
 export const NavMenuBar = styled.div`
   display: none;
   cursor: pointer;
-  margin-top: 75px;
+  margin-top: 60px;
 
   @media screen and (max-width: 1024px) {
     display: block;

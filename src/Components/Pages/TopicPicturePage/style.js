@@ -18,10 +18,16 @@ export const SlectedPictureNav = styled.div`
   align-items: flex-end;
   position: absolute;
   top: 0%;
+
+  @media screen and (max-width: 768px) {
+    height: 110px;
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const SelectedPictureContainer = styled.div`
-  height: calc(100vh - 80px);
+  height: calc(100vh - 180px);
   width: 100%;
   display: flex;
   justify-content: center;

@@ -17,3 +17,6 @@ export { default as PickToolbarSVG } from "./PickToolbar.jsx";
 export { default as ArrowRotationSVG } from "./ArrowRotation.jsx";
 export { default as ChevronLeftSVG } from "./ChevronLeft.jsx";
 export { default as MenuBarSVG } from "./Menubar.jsx";
+export { default as NavPlusSVG } from "./NavPlus.jsx";
+export { default as ScreenRotationSVG } from "./ScreenRotation.jsx";
+export { default as FilterSVG } from "./Filter.jsx";
