@@ -34,4 +34,8 @@ export const SelectedPictureContainer = styled.div`
   background-color: white;
   z-index: 2;
   align-items: center;
+
+  @media screen and (max-width: 1336px) {
+    height: calc(100vh - 150px);
+  }
 `;

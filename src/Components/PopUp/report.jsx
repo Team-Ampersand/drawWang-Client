@@ -27,11 +27,10 @@ function Report({
             그림
           </s.ReportPicturePopUpReportTypeButton>
         </s.ReportPicturePopUpReportTypeButtonWrapper>
-        {/* PlaceHolder 추가 */}
         <s.ReportPicturePopUpReportInputBox
           as="textarea"
           placeholder={"내용을 입력해주세요."}
-          rows={10} // 원하는 줄 수로 설정
+          rows={10}
         />
         <s.ReportPicturePopUpSubmitButton>
           확인

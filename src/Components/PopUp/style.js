@@ -395,6 +395,16 @@ export const ReportPicturePopUp = styled.div`
   left: 50%;
   z-index: 3;
   transform: translate(-50%, -50%);
+
+  @media screen and (max-width: 684px) {
+    width: 420px;
+    height: 350px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 320px;
+    height: 270px;
+  }
 `;
 
 export const ReportPicturePopUpReportTypeButtonWrapper = styled.div`
@@ -406,6 +416,18 @@ export const ReportPicturePopUpReportTypeButtonWrapper = styled.div`
   border-radius: 14px;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 684px) {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 160px;
+    height: 32px;
+    margin-top: 10px;
+  }
 `;
 
 export const ReportPicturePopUpReportTypeButton = styled.div`
@@ -427,6 +449,17 @@ export const ReportPicturePopUpReportTypeButton = styled.div`
   &.active {
     background-color: #fff;
     color: #000;
+  }
+
+  @media screen and (max-width: 684px) {
+    width: 100px;
+    height: 36px;
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 80px;
+    height: 30px;
   }
 `;
 
@@ -457,6 +490,16 @@ export const ReportPicturePopUpReportInputBox = styled.input`
     letter-spacing: -0.22px;
     color: #8c8c8c;
   }
+
+  @media screen and (max-width: 684px) {
+    width: 320px;
+    height: 160px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 220px;
+    height: 120px;
+  }
 `;
 
 export const ReportPicturePopUpSubmitButton = styled.div`
@@ -475,6 +518,17 @@ export const ReportPicturePopUpSubmitButton = styled.div`
   font-weight: 400;
   line-height: 22px;
   letter-spacing: -0.18px;
+
+  @media screen and (max-width: 684px) {
+    width: 100px;
+    height: 36px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 80px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
 `;
 
 export const FilterPopUpContainer = styled.div`
