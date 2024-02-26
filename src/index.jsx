@@ -13,7 +13,7 @@ root.render(
       <Route path="/" element={<P.MainPage />} />
       <Route path="/board" element={<P.PaintBoard />} />
       <Route path="/halloffame" element={<P.HallOfFamePage />} />
-      <Route path="/504" element={<P.ServiceUnavailablePage />} />
+      <Route path="/503" element={<P.ServiceUnavailablePage />} />
       <Route path="*" element={<P.NotFoundPage />} />
     </Routes>
   </Router>

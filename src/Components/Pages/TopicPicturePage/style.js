@@ -19,7 +19,7 @@ export const SlectedPictureNav = styled.div`
   position: absolute;
   top: 0%;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     height: 110px;
     display: flex;
     align-items: center;
