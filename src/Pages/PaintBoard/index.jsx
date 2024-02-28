@@ -3,7 +3,8 @@ import * as s from "./Style";
 import PaintBoardTools from "../../Components/PaintBoardTools";
 import Cursor from "../../Components/Cursor";
 import { SwipeLeftArrowSVG } from "../../Assets/svgs";
-import ToolHideImage from '../../Assets/pngs/ToolHide.png';
+import ToolHideImage from "../../Assets/pngs/ToolHide.png";
+import { Link } from "react-router-dom";
 
 const PaintBoard = () => {
   const canvasRef = useRef(null);
@@ -73,13 +74,12 @@ const PaintBoard = () => {
     setStrokes((prevStrokes) => [...prevStrokes, image]);
   };
 
-  
   const undoStroke = () => {
     const lastStroke = strokes.pop();
     setUndoneStrokes((prevUndoneStrokes) => [...prevUndoneStrokes, lastStroke]);
     redrawStrokes(strokes);
   };
-  
+
   const redoStroke = () => {
     const lastUndoneStroke = undoneStrokes.pop();
     if (lastUndoneStroke) {
@@ -87,7 +87,7 @@ const PaintBoard = () => {
       redrawStrokes(strokes);
     }
   };
-  
+
   const redrawStrokes = (strokesArray) => {
     const canvas = canvasRef.current;
     const context = canvas.getContext("2d");
@@ -119,7 +119,6 @@ const PaintBoard = () => {
     };
   }, [undoStroke, redoStroke]);
 
-
   const saveDrawing = () => {
     const canvas = canvasRef.current;
     const image = canvas.toDataURL("image/png");
@@ -135,16 +134,19 @@ const PaintBoard = () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
     setSelectedTool(null);
   };
+
   const changeColor = (newColor) => {
     setColor(newColor);
     setSelectedTool(null);
   };
 
   return (
-    <> 
+    <>
       <s.DrawNavContainer>
         <s.DrawNav>
-          <s.DrawItem style={{ cursor: "pointer" }}>{<SwipeLeftArrowSVG />}</s.DrawItem>
+          <s.DrawItem style={{ cursor: "pointer" }}>
+            <Link to="/">{<SwipeLeftArrowSVG />}</Link>
+          </s.DrawItem>
           <s.DrawItem>학교</s.DrawItem>
           <s.DrawItem style={{ cursor: "pointer" }}>
             <s.DrawFinish>완료</s.DrawFinish>
@@ -152,7 +154,9 @@ const PaintBoard = () => {
         </s.DrawNav>
       </s.DrawNavContainer>
 
-      {MouseIn && <Cursor BrushCap={BrushCap} BrushWidth={BrushWidth} color={color} />}
+      {MouseIn && (
+        <Cursor BrushCap={BrushCap} BrushWidth={BrushWidth} color={color} />
+      )}
       <s.CanvasContainer>
         <canvas
           onMouseEnter={() => setMouseIn(true)}
@@ -165,23 +169,44 @@ const PaintBoard = () => {
         />
       </s.CanvasContainer>
       <button onClick={saveDrawing}>저장</button>
-      {selectedTool===null? <s.ToolHideImage src={ToolHideImage} onClick={()=>{setSelectedTool("tool")}}/>:<PaintBoardTools
-        color={color}
-        setColor={setColor}
-        changeColor={changeColor}
-        BrushCap={BrushCap}
-        setBrushCap={setBrushCap}
-        BrushWidth={BrushWidth}
-        setBrushWidth={setBrushWidth}
-        AllDelect={AllDelect}
-        originalColor={originalColor}
-        setOriginalColor={setOriginalColor}
-        selectedTool={selectedTool}
-        setSelectedTool={setSelectedTool}
-        undoStroke={undoStroke}
-        redoStroke={redoStroke}
-      />}
-      
+      {selectedTool === null ? (
+        <s.ToolHideImage
+          src={ToolHideImage}
+          onClick={() => {
+            setSelectedTool("tool");
+          }}
+        />
+      ) : (
+        <PaintBoardTools
+          color={color}
+          setColor={setColor}
+          changeColor={changeColor}
+          BrushCap={BrushCap}
+          setBrushCap={setBrushCap}
+          BrushWidth={BrushWidth}
+          setBrushWidth={setBrushWidth}
+          AllDelect={AllDelect}
+          originalColor={originalColor}
+          setOriginalColor={setOriginalColor}
+          selectedTool={selectedTool}
+          setSelectedTool={setSelectedTool}
+          undoStroke={undoStroke}
+          redoStroke={redoStroke}
+        />
+      )}
+      <s.MainContainer>
+        <s.MobilePaintUnavailableBox>
+          <s.MobilePaintUnavailableImg />
+          <s.MobilePaintUnavailableTextBox>
+            <s.MobilePaintUnavailableTitle>
+              모바일 환경에선 그림을 그릴 수 없어요.
+            </s.MobilePaintUnavailableTitle>
+            <s.MobilePaintUnavailableDesc>
+              PC에서 다시 시도해주세요!
+            </s.MobilePaintUnavailableDesc>
+          </s.MobilePaintUnavailableTextBox>
+        </s.MobilePaintUnavailableBox>
+      </s.MainContainer>
     </>
   );
 };

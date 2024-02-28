@@ -7,10 +7,22 @@ export const ThreadBoxContainer = styled.div`
   border-radius: 20px;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
   flex: 0 0 auto;
+  margin-bottom: 40px;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     transform: translateY(-20px);
     transition: all 0.3s ease-in-out;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 90vw;
+    height: 38vh;
+  }
+
+  @media screen and (max-width: 438px) {
+    width: 90vw;
+    height: 280px;
   }
 `;
 
@@ -25,6 +37,16 @@ export const ThreadBoxBottomContainer = styled.div`
   align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    height: 70px;
+    margin-top: calc(38vh - 70px);
+  }
+
+  @media screen and (max-width: 438px) {
+    height: 70px;
+    margin-top: calc(280px - 70px);
+  }
 `;
 
 export const ThreadBoxTextBox = styled.div`
@@ -38,6 +60,10 @@ export const ThreadBoxTitle = styled.div`
   font-weight: 400;
   line-height: 36px;
   letter-spacing: -0.32px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 100%;
+  }
 `;
 
 export const ThreadBoxCreatedTimeLeftText = styled.div`
@@ -46,6 +72,10 @@ export const ThreadBoxCreatedTimeLeftText = styled.div`
   line-height: 30px;
   letter-spacing: -0.22px;
   color: #8c8c8c;
+
+  @media screen and (max-width: 768px) {
+    font-size: 100%;
+  }
 `;
 
 export const ThreadBoxArrowIcon = styled.div`
@@ -77,5 +107,9 @@ export const CreateNewThreadButton = styled.div`
   &:hover {
     transform: translateY(-20px);
     transition: all 0.3s ease-in-out;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;

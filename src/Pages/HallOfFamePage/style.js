@@ -31,11 +31,28 @@ export const HallOfFameMainContainer = styled.div`
 
 export const HallOfFameContainer = styled.div`
   display: flex;
-  gap: 100px;
   padding: 0 80px;
   margin-left: 80px;
   width: 100%;
   position: fixed;
+
+  @media screen and (min-width: 769px) {
+    gap: 100px;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0px;
+    height: calc(100vh - 170px);
+    padding-top: 40px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    overflow-y: scroll;
+    position: static;
+    overflow-x: hidden;
+  }
 `;
 
 export const HallOfFameThreadBoxTitle = styled.div`
@@ -46,6 +63,12 @@ export const HallOfFameThreadBoxTitle = styled.div`
   letter-spacing: -0.48px;
   position: absolute;
   top: 16%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 25px;
+    position: absolute;
+    top: 47px;
+  }
 `;
 
 export const HallOfFameImg = styled.div`
@@ -91,6 +114,10 @@ export const SelectDateBox = styled.div`
   position: absolute;
   top: 90%;
   gap: 20px;
+
+  @media screen and (max-widht: 768px) {
+    display: none !important;
+  }
 `;
 
 export const SelectWrapper = styled.div`
@@ -99,11 +126,19 @@ export const SelectWrapper = styled.div`
   align-items: center;
   cursor: pointer;
   gap: 8px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SelectDateText = styled.div`
   font-size: 18px;
   font-weight: 400;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SwipeRightArrowButton = styled.div`
@@ -119,6 +154,10 @@ export const SwipeRightArrowButton = styled.div`
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
 `;
 
 export const SwipeLeftArrowButton = styled.div`
@@ -134,4 +173,8 @@ export const SwipeLeftArrowButton = styled.div`
   align-items: center;
   border-radius: 50%;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    display: none !important;
+  }
 `;

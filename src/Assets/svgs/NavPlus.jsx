@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function Plus() {
+export default function NavPlus() {
   return (
     <svg
-      width="60"
-      height="54"
+      width="32"
+      height="32"
       viewBox="0 0 60 54"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +14,7 @@ export default function Plus() {
           id="Vector 10"
           d="M30 9.30774V44.6924"
           stroke="#000000"
-          strokeWidth="4"
+          strokeWidth="5.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
@@ -22,7 +22,7 @@ export default function Plus() {
           id="Vector 11"
           d="M50 27L10 27"
           stroke="#000000"
-          strokeWidth="4"
+          strokeWidth="5.5"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
