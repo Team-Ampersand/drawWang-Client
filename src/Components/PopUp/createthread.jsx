@@ -5,8 +5,8 @@ function CreateThread({
   inputValue,
   sameTopicAlreadyExist,
   handleInputChange,
-  testFunc,
   handleTypeTopicPopUp,
+  CreateThreadFunc
 }) {
   return (
     <>
@@ -22,7 +22,7 @@ function CreateThread({
           <s.ErrorMessage>이미 존재하는 스레드입니다.</s.ErrorMessage>
         )}
         <s.TypeTopicPopUpButton
-          onClick={testFunc}
+          onClick={CreateThreadFunc}
           className={inputValue ? "active" : ""}
         >
           확인

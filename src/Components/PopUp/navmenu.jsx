@@ -4,7 +4,7 @@ import { SearchSVG } from "../../Assets/svgs";
 import Search from "../../Components/Search";
 import CreateThread from "../../Components/PopUp/createthread";
 
-function NavMenu({ isNavMenuClicked, setIsNavMenuClicked }) {
+function NavMenu({ isNavMenuClicked, setIsNavMenuClicked,threadData }) {
   const [search, setSearch] = useState(false);
   const [searchContent, setSearchContent] = useState("");
   const [isCreateThreadClicked, setIsCreateThreadClicked] = useState(false);
@@ -63,13 +63,13 @@ function NavMenu({ isNavMenuClicked, setIsNavMenuClicked }) {
               }}
               placeholder="찾으시는 스레드가 있으신가요?"
             />
-            <Search search={search} searchContent={searchContent} />
+            <Search search={search} searchContent={searchContent} threadData={threadData} />
           </s.NavMenuSearchBox>
         </s.NavMenuSearchContainer>
         {!search && ( // search가 false일 때만 렌더링
           <s.NavMenuUl>
             <s.NavMenuLi to="/">주제</s.NavMenuLi>
-            <s.NavMenuLi to="/halloffame">명예의 전당</s.NavMenuLi>
+            <s.NavMenuLi to="/halloffame" threadData={threadData}>명예의 전당</s.NavMenuLi>
           </s.NavMenuUl>
         )}
         <s.CreateThreadText>

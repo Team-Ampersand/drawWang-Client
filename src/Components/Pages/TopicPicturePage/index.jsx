@@ -10,6 +10,8 @@ function TopicPicture({
   reportType,
   handleReportTypeTopicButtonClick,
   handleReportTypePictureButtonClick,
+  Topicdata,
+  topics
 }) {
   return (
     <>
@@ -21,7 +23,7 @@ function TopicPicture({
           >
             <SwipeLeftArrowSVG />
           </s.SelectedPictureItem>
-          <s.SelectedPictureItem>학교</s.SelectedPictureItem>
+          <s.SelectedPictureItem>{topics}</s.SelectedPictureItem>
           <s.SelectedPictureItem
             style={{ cursor: "pointer" }}
             onClick={handleReportPopUp}
@@ -39,6 +41,7 @@ function TopicPicture({
           handleReportTypePictureButtonClick={
             handleReportTypePictureButtonClick
           }
+          reportPopUpEnabled={reportPopUpEnabled}
         />
       )}
     </>

@@ -4,9 +4,13 @@ import PaintBoardTools from "../../Components/PaintBoardTools";
 import Cursor from "../../Components/Cursor";
 import { SwipeLeftArrowSVG } from "../../Assets/svgs";
 import ToolHideImage from "../../Assets/pngs/ToolHide.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import axios from "axios";
 
 const PaintBoard = () => {
+  const location = useLocation();
+  const topicsid = location.state?.id;
+  const topics = location.state?.topics;
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [color, setColor] = useState("#111");
@@ -24,9 +28,9 @@ const PaintBoard = () => {
     const aspectRatio = 16 / 9;
 
     canvas.width = (window.innerWidth / 100) * 90;
+    canvas.height = canvas.width / aspectRatio;
     canvas.style.border = "3px solid var(--Gray-737373, #737373)";
 
-    canvas.height = canvas.width / aspectRatio;
     context.fillStyle = "#fff";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -119,13 +123,39 @@ const PaintBoard = () => {
     };
   }, [undoStroke, redoStroke]);
 
-  const saveDrawing = () => {
+  const saveDrawing = async () => {
     const canvas = canvasRef.current;
-    const image = canvas.toDataURL("image/png");
+    const dataURL = canvas.toDataURL("image/png");
     const link = document.createElement("a");
-    link.href = image;
-    link.download = "draw.png";
+    link.download = "drawing.png";
+    link.href = dataURL;
+    document.body.appendChild(link); 
     link.click();
+    document.body.removeChild(link); 
+
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/png"; 
+    fileInput.addEventListener("change", async (event) => {
+      const file = event.target.files[0];
+      console.log("file",file);
+      const formData = new FormData();
+      formData.append("image", file); 
+      formData.append("request", JSON.stringify({ userName: "taeyoon", threadId: topicsid }));
+      try {
+        const response = await axios.post("/api/board", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        console.log("이미지가 성공적으로 서버에 전송되었습니다.", response.data);
+      } catch (error) {
+        console.error("이미지 전송 중 오류가 발생했습니다:", error);
+      }
+    });
+
+    // 파일 선택 input 요소를 자동으로 클릭하여 파일 선택
+    fileInput.click();
   };
 
   const AllDelect = () => {
@@ -147,16 +177,14 @@ const PaintBoard = () => {
           <s.DrawItem style={{ cursor: "pointer" }}>
             <Link to="/">{<SwipeLeftArrowSVG />}</Link>
           </s.DrawItem>
-          <s.DrawItem>학교</s.DrawItem>
-          <s.DrawItem style={{ cursor: "pointer" }}>
+          <s.DrawItem>{topics}</s.DrawItem>
+          <s.DrawItem style={{ cursor: "pointer" }} onClick={saveDrawing}>
             <s.DrawFinish>완료</s.DrawFinish>
           </s.DrawItem>
         </s.DrawNav>
       </s.DrawNavContainer>
 
-      {MouseIn && (
-        <Cursor BrushCap={BrushCap} BrushWidth={BrushWidth} color={color} />
-      )}
+      {MouseIn && <Cursor BrushCap={BrushCap} BrushWidth={BrushWidth} color={color} />}
       <s.CanvasContainer>
         <canvas
           onMouseEnter={() => setMouseIn(true)}
@@ -168,7 +196,6 @@ const PaintBoard = () => {
           onMouseOut={stopDrawing}
         />
       </s.CanvasContainer>
-      <button onClick={saveDrawing}>저장</button>
       {selectedTool === null ? (
         <s.ToolHideImage
           src={ToolHideImage}
@@ -198,12 +225,8 @@ const PaintBoard = () => {
         <s.MobilePaintUnavailableBox>
           <s.MobilePaintUnavailableImg />
           <s.MobilePaintUnavailableTextBox>
-            <s.MobilePaintUnavailableTitle>
-              모바일 환경에선 그림을 그릴 수 없어요.
-            </s.MobilePaintUnavailableTitle>
-            <s.MobilePaintUnavailableDesc>
-              PC에서 다시 시도해주세요!
-            </s.MobilePaintUnavailableDesc>
+            <s.MobilePaintUnavailableTitle>모바일 환경에선 그림을 그릴 수 없어요.</s.MobilePaintUnavailableTitle>
+            <s.MobilePaintUnavailableDesc>PC에서 다시 시도해주세요!</s.MobilePaintUnavailableDesc>
           </s.MobilePaintUnavailableTextBox>
         </s.MobilePaintUnavailableBox>
       </s.MainContainer>

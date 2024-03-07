@@ -20,3 +20,5 @@ export { default as MenuBarSVG } from "./Menubar.jsx";
 export { default as NavPlusSVG } from "./NavPlus.jsx";
 export { default as ScreenRotationSVG } from "./ScreenRotation.jsx";
 export { default as FilterSVG } from "./Filter.jsx";
+export { default as RedHeartSVG } from "./RedHeart.jsx";
+export { default as LodingSVG } from "./Loding.jsx";

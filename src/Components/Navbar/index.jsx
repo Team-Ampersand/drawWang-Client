@@ -5,13 +5,12 @@ import Search from "../../Components/Search";
 import NavMenu from "../../Components/PopUp/navmenu";
 import CreateThread from "../../Components/PopUp/createthread";
 
-function Navbar() {
+function Navbar({threadData,boardData,topics,setTopics,setTopicsid,topicsid}) {
   const [search, setSearch] = useState(false);
   const [searchContent, setSearchContent] = useState("");
   const [isNavMenuClicked, setIsNavMenuClicked] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [sameTopicAlreadyExist, setSameTopicAlreadyExist] = useState(false);
-
   const handleNavMenuClick = () => {
     setIsNavMenuClicked(!isNavMenuClicked);
   };
@@ -54,7 +53,7 @@ function Navbar() {
               }}
               placeholder="찾으시는 스레드가 있으신가요?"
             />
-            <Search search={search} searchContent={searchContent} />
+            <Search search={search} searchContent={searchContent}threadData={threadData} boardData={boardData} topics={topics} setTopics={setTopics} topicsid={topicsid} setTopicsid={setTopicsid}/>
           </s.SearchBox>
         </s.SearchContainer>
         <s.NavMenuBar onClick={handleNavMenuClick}>
@@ -65,6 +64,7 @@ function Navbar() {
         <NavMenu
           isNavMenuClicked={isNavMenuClicked}
           setIsNavMenuClicked={setIsNavMenuClicked}
+          threadData={threadData} 
         />
       ) : (
         ""

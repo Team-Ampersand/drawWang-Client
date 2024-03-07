@@ -32,7 +32,7 @@ function Report({
           placeholder={"내용을 입력해주세요."}
           rows={10}
         />
-        <s.ReportPicturePopUpSubmitButton>
+        <s.ReportPicturePopUpSubmitButton >
           확인
         </s.ReportPicturePopUpSubmitButton>
       </s.ReportPicturePopUp>

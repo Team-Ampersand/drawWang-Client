@@ -29,7 +29,7 @@ export const Toolbar = styled.div`
   border-radius: 40px;
   border: 2px solid var(--Gray-8c8c8c, #8c8c8c);
   background-color: #fff;
-  position: absolute;
+  position: fixed;
   bottom: 40px;
   left: 50%;
   transform: translate(-50%, 0);

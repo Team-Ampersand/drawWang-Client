@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as s from "./style";
 import TopicPicturePage from "../TopicPicturePage";
 import PictureBox from "../../ThreadBox/picture";
@@ -15,9 +15,11 @@ import {
 } from "../../../Assets/svgs";
 import ThreadPictureNull from "../../ThreadPictureNull";
 import FilterPopup from "../../PopUp/filter"; // 필터 팝업 컴포넌트 임포트
+import axios from "axios";
 
 const SelectedTopic = ({
   topics,
+  topicsid,
   slidePx,
   selectedPicture,
   handlePictureArrowClick,
@@ -32,14 +34,33 @@ const SelectedTopic = ({
   selectedFilter,
   setSelectedFilter,
   setTopics,
+  setTopicsid,
   setTopicsContainerVisible,
+  boardData ,
+  settopicdata
 }) => {
   const NumberOfPictures = 10;
-  const SlideWidth = 740 * NumberOfPictures;
+  
+  const [threadData,setThreadData] = useState(0);
+  const [SlideWidth,setSlideWidth] = useState(0);
   const [isFilterPopupOpen, setIsFilterPopupOpen] = useState(false); // 필터 팝업의 열림/닫힘 상태를 관리
+  
+  const [isloding,setisloding]=useState(false);
+  const [topicdata,setTopicdata]=useState(0);
+//
+  useEffect(()=>{
+    const matchingThreads = boardData.filter(board => board.threadId === topicsid);
+    setTopicdata(matchingThreads);
+    setSlideWidth(740*matchingThreads.length);
+    console.log("hi",topicdata);
+  },[]);
+  useEffect(()=>{
+    setisloding(true);
+  },[topicdata]);
 
   const handleChevronLeftClick = () => {
     setTopics("");
+    setTopicsid("");
     setTopicsContainerVisible(true);
   };
 
@@ -52,10 +73,9 @@ const SelectedTopic = ({
   };
 
   return (
-    topics === "학교" && (
       <s.SelectedTopicContainer>
         <s.DrawNewPictureButton>
-          <Link to="/board">
+          <Link to="/board" state={{ id: topicsid, topics:topics }}>
             <NavPlusSVG />
           </Link>
         </s.DrawNewPictureButton>
@@ -74,11 +94,10 @@ const SelectedTopic = ({
             <s.ChevronLeftSVGBox onClick={handleChevronLeftClick}>
               <ChevronLeftSVG />
             </s.ChevronLeftSVGBox>
-            <s.SelectedTopicName>학교</s.SelectedTopicName>
+            <s.SelectedTopicName>{topics}</s.SelectedTopicName>
           </s.TopTitleContainer>
-          <s.SelectedTopicTimeLeftText>13:25:17</s.SelectedTopicTimeLeftText>
         </s.SelectedTopicTitleBox>
-        {NumberOfPictures ? (
+        {topicdata.length ? (
           <>
             {selectedPicture !== 1 && (
               <s.TopicsContainer
@@ -87,12 +106,14 @@ const SelectedTopic = ({
                   transition: "transform 0.3s ease-in-out",
                 }}
               >
-                <Link to="/board">
+                <Link to="/board" state={{ id: topicsid, topics:topics }}>
                   <CreateNewBox />
                 </Link>
-                {Array.from({ length: NumberOfPictures }).map((_, index) => (
+                {Array.from({ length: topicdata.length }).map((_, index) => (
                   <PictureBox
                     key={index}
+                    setSlideWidth={setSlideWidth}
+                    threadData={topicdata[index]}
                     onPictureArrowClick={handlePictureArrowClick}
                   />
                 ))}
@@ -101,6 +122,7 @@ const SelectedTopic = ({
             {/* 선택된 스레드가 1번이면 열릴 페이지 topicpicturepage */}
             {selectedPicture === 1 && (
               <TopicPicturePage
+              topics={topics}
                 handleClosePicture={handleClosePicture}
                 handleReportPopUp={handleReportPopUp}
                 reportPopUpEnabled={reportPopUpEnabled}
@@ -155,12 +177,11 @@ const SelectedTopic = ({
               </s.SelectFilterWrapper>
             </s.SelectFilterBox>
           </>
-        ) : (
-          <ThreadPictureNull />
-        )}
+        ) : isloding?
+          <ThreadPictureNull id={topicsid} topics={topics}/>
+        :<></>}
       </s.SelectedTopicContainer>
     )
-  );
 };
 
 export default SelectedTopic;

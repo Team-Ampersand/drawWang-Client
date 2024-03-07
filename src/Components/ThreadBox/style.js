@@ -3,13 +3,18 @@ import styled from "styled-components";
 export const ThreadBoxContainer = styled.div`
   width: 640px;
   height: 460px;
-  background-color: #d9d9d9;
+  background-image: ${props => props.img ? `url(${props.img})` : `url("")`};
+  background-size: cover;
   border-radius: 20px;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1);
   flex: 0 0 auto;
   margin-bottom: 40px;
   transition: all 0.3s ease-in-out;
 
+  img{
+    width:100%;
+    height:100%;
+  }
   &:hover {
     transform: translateY(-20px);
     transition: all 0.3s ease-in-out;

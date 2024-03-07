@@ -46,7 +46,7 @@ export const SearchBox = styled.div`
   align-items: center;
   gap: 10px;
   border-radius: 30px;
-  border: 2px solid #8c8c8c;
+  border: 2px solid #d9d9d9;
   display: flex;
   justify-content: flex-start;
   align-items: center;

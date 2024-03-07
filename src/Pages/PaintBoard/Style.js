@@ -64,7 +64,7 @@ export const DrawNavContainer = styled.div`
 `;
 
 export const ToolHideImage =styled.img`
-  position:absolute;
+  position:fixed;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
